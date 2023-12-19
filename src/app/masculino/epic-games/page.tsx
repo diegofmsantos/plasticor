@@ -20,30 +20,42 @@ const Page = () => {
         openModal(1)
     }, [])
 
-    const [dez, setDez] = useState(true)
+    const [uma, setUma] = useState(true)
+    const [dez, setDez] = useState(false)
     const [doze, setDoze] = useState(false)
     const [quinze, setQuinze] = useState(false)
     const [vinte, setVinte] = useState(false)
 
+    const handleShowUma = () => {
+        setUma(true)
+        setDez(false)
+        setDoze(false)
+        setQuinze(false)
+        setVinte(false)
+    }
     const handleShowDez = () => {
+        setUma(false)
         setDez(true)
         setDoze(false)
         setQuinze(false)
         setVinte(false)
     }
     const handleShowDoze = () => {
+        setUma(false)
         setDez(false)
         setDoze(true)
         setQuinze(false)
         setVinte(false)
     }
     const handleShowQuinze = () => {
+        setUma(false)
         setDez(false)
         setDoze(false)
         setQuinze(true)
         setVinte(false)
     }
     const handleShowVinte = () => {
+        setUma(false)
         setDez(false)
         setDoze(false)
         setQuinze(false)
@@ -72,9 +84,13 @@ const Page = () => {
                     <div className="w-64 m-auto flex justify-center items-center mb-5 min-[400px]:w-96">
                         <Image src={`/linhas-masculinas/EPIC-GAMES/${imageOfModal}`} width={350} height={300} alt="Logo" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">DESCRIÇÃO DO PRODUTO</h3>
-                    <p className="min-w-[250px] text-sm text-justify lg:text-md">O caderno Espiral Capa Dura Universitário 10 Matérias Wandinha 160 folhas possui capa dura com acabamento metalizado, parte interna decorada, bolsa de papel decorada para guardar trabalhos e anotações, folha com adesivos funcionais e folhas pautadas. Ideal para o dia a dia na escola ou na faculdade.</p>
-                    <div className="flex flex-col justify-start my-4">
+                    <h3 className="text-2xl font-bold mb-2">DESCRIÇÃO DO PRODUTO:</h3>
+                    <p className="min-w-[250px] text-sm text-justify lg:text-md">O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.</p>
+                    <div className="flex flex-col justify-start text-sm my-4">
+                        <div className="flex items-center gap-2" onChange={handleShowUma}>
+                            <input type="radio" checked={uma ? true : false} />
+                            <label>1 Matéria</label>
+                        </div>
                         <div className="flex items-center gap-2" onChange={handleShowDez}>
                             <input type="radio" checked={dez ? true : false} />
                             <label>10 Matérias</label>
@@ -92,36 +108,59 @@ const Page = () => {
                             <label>20 Matérias</label>
                         </div>
                     </div>
-                    {dez &&
-                        <div>
-                            <div><b>FORMATO:</b> 200mm x 275mm</div>
+                    {uma &&
+                        <div className="text-sm">
+                            <div><b>CAPA:</b> Dura</div>
+                            <div><b>FORMATO:</b> 199mm x 270mm</div>
                             <div><b>GRAMATURA:</b> 56 g/m²</div>
-                            <div><b>Nº DE FOLHAS:</b> 160 folhas</div>
-                            <div><b>Nº DE MATÉRIAS:</b> 10 matérias</div>
+                            <div><b>MIOLO:</b> Pautado</div><br />
+                            <div><b>Nº DE FOLHAS:</b> 96 folhas</div>
+                            <div><b>QTD POR CAIXA:</b> 60 unidades</div>
+                            <div><b>VALOR:</b> R$ 682,20</div>
+                        </div>
+                    }
+                    {dez &&
+                        <div className="text-sm">
+                            <div><b>CAPA:</b> Dura</div>
+                            <div><b>FORMATO:</b> 199mm x 270mm</div>
+                            <div><b>GRAMATURA:</b> 56 g/m²</div>
+                            <div><b>MIOLO:</b> Pautado</div><br />
+                            <div><b>Nº DE FOLHAS:</b> 200 folhas</div>
+                            <div><b>QTD POR CAIXA:</b> 30 unidades</div>
+                            <div><b>VALOR:</b> R$ 615,60</div>
                         </div>
                     }
                     {doze &&
-                        <div>
-                            <div><b>FORMATO:</b> 200mm x 275mm</div>
+                        <div className="text-sm">
+                            <div><b>CAPA:</b> Dura</div>
+                            <div><b>FORMATO:</b> 199mm x 270mm</div>
                             <div><b>GRAMATURA:</b> 56 g/m²</div>
-                            <div><b>Nº DE FOLHAS:</b> 160 folhas</div>
-                            <div><b>Nº DE MATÉRIAS:</b> 12 matérias</div>
+                            <div><b>MIOLO:</b> Pautado</div><br />
+                            <div><b>Nº DE FOLHAS:</b> 240 folhas</div>
+                            <div><b>QTD POR CAIXA:</b> 24 unidades</div>
+                            <div><b>VALOR:</b> R$ 557,28</div>
                         </div>
                     }
                     {quinze &&
-                        <div>
-                            <div><b>FORMATO:</b> 200mm x 275mm</div>
+                        <div className="text-sm">
+                            <div><b>CAPA:</b> Dura</div>
+                            <div><b>FORMATO:</b> 199mm x 270mm</div>
                             <div><b>GRAMATURA:</b> 56 g/m²</div>
-                            <div><b>Nº DE FOLHAS:</b> 160 folhas</div>
-                            <div><b>Nº DE MATÉRIAS:</b> 15 matérias</div>
+                            <div><b>MIOLO:</b> Pautado</div><br />
+                            <div><b>Nº DE FOLHAS:</b> 300 folhas</div>
+                            <div><b>QTD POR CAIXA:</b> 24 unidades</div>
+                            <div><b>VALOR:</b> R$ 660,96</div>
                         </div>
                     }
                     {vinte &&
-                        <div>
-                            <div><b>FORMATO:</b> 200mm x 275mm</div>
+                        <div className="text-sm">
+                            <div><b>CAPA:</b> Dura</div>
+                            <div><b>FORMATO:</b> 199mm x 270mm</div>
                             <div><b>GRAMATURA:</b> 56 g/m²</div>
-                            <div><b>Nº DE FOLHAS:</b> 160 folhas</div>
-                            <div><b>Nº DE MATÉRIAS:</b> 20 matérias</div>
+                            <div><b>MIOLO:</b> Pautado</div><br />
+                            <div><b>Nº DE FOLHAS:</b> 400 folhas</div>
+                            <div><b>QTD POR CAIXA:</b> 18 unidades</div>
+                            <div><b>VALOR:</b> R$ 631,98</div>
                         </div>
                     }
                 </div>
