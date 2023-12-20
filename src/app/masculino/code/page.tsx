@@ -62,26 +62,56 @@ const Page = () => {
         setVinte(true)
     }
 
+    const [current, setCurrent] = useState(0)
+
+
+    const prev = () => {
+        setCurrent((current) => (current === 0 ? Code.length - 1 : current - 1))
+    }
+
+    const next = () => {
+        setCurrent((current) => (current === Code.length - 1 ? 0 : current + 1))
+    }
+
     return (
-        <div className="pt-40 pb-20 container m-auto flex flex-col justify-center items-center p-4 overflow-x-hidden">
-            <div className="w-full m-auto flex flex-col justify-center items-center gap-5 my-10 p-2 lg:flex-row lg:justify-start lg:items-start">
-                <div className="flex justify-center flex-wrap gap-5 lg:flex lg:gap-2 lg:w-[450px]">
-                    {Code.map(item => (
-                        <div
-                            key={item.id}
-                            className="w-60 min-[400px]:w-72 md:mr-2 cursor-pointer mb-4 opacity-70 hover:opacity-100 md:w-96px lg:w-36"
-                            onClick={() => openModal(item.id)}
-                        >
-                            <img
-                                src={`/linhas-masculinas/${item.linha}/${item.url}`}
-                                alt="Notebook"
-                                className="w-60 min-[400px]:w-72 md:mr-2 md:w-96px lg:w-36"
-                            />
-                        </div>
-                    ))}
+        <div className="pt-40 pb-20 flex flex-col justify-center items-center p-4 overflow-x-hidden">
+            <div className="w-full flex flex-col justify-center items-center gap-5 my-10 p-2 lg:flex-row lg:justify-center lg:items-start">
+                <div className="flex flex-row items-center lg:flex-col lg:justify-center lg:items-center">
+                    <div onClick={next} className="cursor-pointer mr-2 border-none lg:text-center lg:rotate-90">
+                        <Image
+                            src={`/up.svg`}
+                            width={20}
+                            height={20}
+                            alt="Arrow"
+                        />
+                    </div>
+                    <div className="w-56 h-[275px] min-[400px]:w-[288px] min-[400px]:h-[350px] min-[400px]:gap-4 md:gap-6 border-none flex justify-start gap-[14px] flex-wrap overflow-x-hidden overflow-y-hidden md:w-96 md:h-[480px] lg:w-52 lg:h-[1010px]">
+                        {Code.map(item => (
+                            <div
+                                style={{ transform: `translateY(-${current * 105}%)` }}
+                                key={item.id}
+                                className="w-56 min-[400px]:w-[288px] cursor-pointer opacity-70 hover:opacity-100 md:w-96 lg:w-48"
+                                onClick={() => openModal(item.id)}
+                            >
+                                <img
+                                    src={`/linhas-masculinas/${item.linha}/${item.url}`}
+                                    alt="Notebook"
+                                    className="w-56 min-[400px]:w-[288px] md:w-96"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div onClick={prev} className="cursor-pointer border-none ml-2 md:flex lg:rotate-90">
+                        <Image
+                            src={`/down.svg`}
+                            width={20}
+                            height={20}
+                            alt="Arrow"
+                        />
+                    </div>
                 </div>
-                <div className="w-full h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
-                    <div className="w-64 m-auto flex justify-center items-center mb-5 min-[400px]:w-96">
+                <div className="max-w-[800px] h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
+                    <div className="w-64 m-auto hidden lg:flex justify-center items-center mb-5 min-[400px]:w-96">
                         <Image src={`/linhas-masculinas/CODE/${imageOfModal}`} width={452} height={550} alt="Logo" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">DESCRIÇÃO DO PRODUTO:</h3>
