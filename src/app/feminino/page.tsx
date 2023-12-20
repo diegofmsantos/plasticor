@@ -3,8 +3,8 @@ import Link from "next/link";
 const Page = () => {
 
     return (
-        <div>
-            <section className="bg-yellow-300 w-72 text-center p-8 m-auto my-14">
+        <div className="pt-[157px] pb-20">
+            <section className="bg-yellow-300 w-72 text-center p-8 m-auto my-10">
                 <p className="text-[#002372] text-xl font-bold">LINHAS FEMININAS</p>
             </section>
             <div className="container max-w-[1500px] p-8 text-center m-auto flex justify-center flex-wrap items-center gap-4 sm:gap-x-14 gap-y-14 lg:justify-center  ">

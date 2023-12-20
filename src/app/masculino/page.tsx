@@ -3,11 +3,11 @@ import Link from "next/link";
 const Page = () => {
 
     return (
-        <div>
-            <section className="bg-yellow-300 w-72 text-center p-8 m-auto my-10">
+        <div className="pt-48 pb-20">
+            <section className="bg-yellow-300 w-72 text-center p-8 m-auto mb-10">
                 <p className="text-[#002372] text-xl font-bold">LINHAS MASCULINAS</p>
             </section>
-            <div className="container max-w-[1500px] p-8 text-center m-auto flex justify-center flex-wrap items-center gap-4 sm:gap-x-14 gap-y-14 lg:justify-center">
+            <div className="max-w-[1500px] p-8 text-center m-auto flex justify-center flex-wrap items-center gap-4 sm:gap-x-14 gap-y-14 lg:justify-center">
                 <Link href="/masculino/code">
                     <img src={`capas-masculinas/CODE-1.png`} alt="Notebook" className="w-52 min-[400px]:w-60 cursor-pointer opacity-70 hover:opacity-100" />
                     <p className="text-sm text-[#002372] font-bold mt-2">CODE</p>

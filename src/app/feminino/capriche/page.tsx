@@ -63,7 +63,7 @@ const Page = () => {
     }
 
     return (
-        <div className="container m-auto flex flex-col justify-center items-center p-4 overflow-x-hidden">
+        <div className="pt-40 pb-20 m-auto flex flex-col justify-center items-center p-4 overflow-x-hidden">
             <div className="w-full m-auto flex flex-col justify-center items-center gap-5 my-10 p-2 lg:flex-row lg:justify-start lg:items-start">
                 <div className="flex justify-center flex-wrap gap-5 lg:flex lg:gap-2 lg:w-[450px]">
                     {Capriche.map(item => (
@@ -82,7 +82,7 @@ const Page = () => {
                 </div>
                 <div className="w-full h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
                     <div className="w-64 m-auto flex justify-center items-center mb-5 min-[400px]:w-96">
-                        <Image src={`/linhas-femininas/CAPRICHE/${imageOfModal}`} width={350} height={300} alt="Logo" />
+                        <Image src={`/linhas-femininas/CAPRICHE/${imageOfModal}`} width={452} height={550} alt="Logo" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">DESCRIÇÃO DO PRODUTO:</h3>
                     <p className="min-w-[250px] text-sm text-justify lg:text-md">O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.</p>
