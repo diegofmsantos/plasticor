@@ -4,6 +4,8 @@ import { Daijobu } from "@/data/notebooksListMasc";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
 
 const Page = () => {
 
@@ -62,61 +64,39 @@ const Page = () => {
         setVinte(true)
     }
 
-    const [current, setCurrent] = useState(0)
-
-
-    const prev = () => {
-        setCurrent((current) => (current === 0 ? Daijobu.length - 1 : current - 1))
-    }
-
-    const next = () => {
-        setCurrent((current) => (current === Daijobu.length - 1 ? 0 : current + 1))
-    }
-
     return (
-        <div className=" pt-40 pb-20 flex flex-col justify-center items-center p-4 overflow-x-hidden">
-            <div className="w-full flex flex-col justify-center items-center gap-5 my-10 p-2 lg:flex-row lg:justify-start lg:items-start">
-                <div className="flex flex-row items-center lg:flex-col lg:justify-center lg:items-center">
-                    <div onClick={next} className="cursor-pointer mr-2 border-none lg:text-center lg:rotate-90">
-                        <Image
-                            src={`/up.svg`}
-                            width={20}
-                            height={20}
-                            alt="Arrow"
-                        />
-                    </div>
-                    <div className="w-56 h-[275px] min-[400px]:w-[288px] min-[400px]:h-[350px] min-[400px]:gap-4 md:gap-6 border-none flex justify-start gap-[14px] flex-wrap overflow-x-hidden overflow-y-hidden md:w-96 md:h-[480px] lg:w-52 lg:h-[1010px]">
-                        {Daijobu.map(item => (
-                            <div
-                                style={{ transform: `translateY(-${current * 105}%)` }}
-                                key={item.id}
-                                className="w-56 min-[400px]:w-[288px] cursor-pointer opacity-70 hover:opacity-100 md:w-96 lg:w-48"
-                                onClick={() => openModal(item.id)}
-                            >
-                                <img
-                                    src={`/linhas-masculinas/${item.linha}/${item.url}`}
-                                    alt="Notebook"
-                                    className="w-56 min-[400px]:w-[288px] md:w-96"
-                                />
-                            </div>
+        <div className="pt-40 pb-20 flex flex-col justify-center items-center p-4 overflow-x-hidden">
+            <div className="flex flex-col justify-center items-center gap-5 my-10 p-2 xl:flex-row xl:justify-start xl:items-start">
+                <div className="w-[280px] min-[400px]:w-[370px] md:w-[452px] lg:w-[full] xl:w-[300px]">
+                    <Swiper
+                        modules={[Navigation, Pagination, EffectCoverflow]}
+                        slidesPerView={'auto'}
+                        pagination
+                        navigation
+                        loop
+                        effect={'coverflow'}
+                        grabCursor
+                        coverflowEffect={{
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 2.5
+                        }}
+                    >
+                        {Daijobu.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Image src={`/linhas-masculinas/${item.linha}/${item.url}`} width={452} height={550} alt="Notebook" onClick={() => openModal(item.id)} />
+                            </SwiperSlide>
                         ))}
-                    </div>
-                    <div onClick={prev} className="cursor-pointer border-none ml-2 md:flex lg:rotate-90">
-                        <Image
-                            src={`/down.svg`}
-                            width={20}
-                            height={20}
-                            alt="Arrow"
-                        />
-                    </div>
+                    </Swiper>
                 </div>
                 <div className="max-w-[800px] h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
-                    <div className="w-64 m-auto hidden lg:flex justify-center items-center mb-5 min-[400px]:w-96">
+                    <div className="w-64 m-auto hidden xl:flex justify-center items-center mb-5 min-[400px]:w-[500px]">
                         <Image src={`/linhas-masculinas/DAIJOBU/${imageOfModal}`} width={452} height={550} alt="Logo" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">DESCRIÇÃO DO PRODUTO:</h3>
                     <p className="min-w-[250px] text-sm text-justify lg:text-md">O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.</p>
-                    <div className="flex flex-col justify-start text-sm my-4">
+                    <div className="flex flex-col justify-start gap-1 my-4">
                         <div className="flex items-center gap-2" onChange={handleShowUma}>
                             <input type="radio" checked={uma ? true : false} />
                             <label>1 Matéria</label>
