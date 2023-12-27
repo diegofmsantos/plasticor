@@ -4,6 +4,8 @@ import { High } from "@/data/notebooksListMasc";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay, Navigation, EffectCoverflow } from 'swiper/modules'
 
 const Page = () => {
 
@@ -63,30 +65,61 @@ const Page = () => {
     }
 
     return (
-        <div className="pt-40 pb-20 m-auto flex flex-col justify-center items-center p-4 overflow-x-hidden">
-            <div className="w-full m-auto flex flex-col justify-center items-center gap-5 my-10 p-2 lg:flex-row lg:justify-start lg:items-start">
-                <div className="flex justify-center flex-wrap gap-5 lg:flex lg:gap-2 lg:w-[450px]">
-                    {High.map(item => (
-                        <div
-                            key={item.id}
-                            className="w-60 min-[400px]:w-72 md:mr-2 cursor-pointer mb-4 opacity-70 hover:opacity-100 md:w-96px lg:w-36"
-                            onClick={() => openModal(item.id)}
-                        >
-                            <img
-                                src={`/linhas-masculinas/${item.linha}/${item.url}`}
-                                alt="Notebook"
-                                className="w-60 min-[400px]:w-72 md:mr-2 md:w-96px lg:w-36"
-                            />
-                        </div>
-                    ))}
+        <div className="pt-40 pb-20 flex flex-col justify-center items-center p-4 overflow-x-hidden">
+            <div className="flex flex-col justify-center items-center gap-5 my-10 p-2 xl:flex-row xl:justify-start xl:items-start">
+                <div className="hidden xl:block xl:w-[200px] xl:h-[600px]">
+                    <Swiper
+                        className="h-[750px]"
+                        direction={'vertical'}
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination]}
+                    >
+                        {High.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Image src={`/linhas-masculinas/${item.linha}/${item.url}`} width={452} height={550} alt="Notebook" onClick={() => openModal(item.id)} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
-                <div className="w-full h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
-                    <div className="w-64 m-auto flex justify-center items-center mb-5 min-[400px]:w-96">
+                <div className="w-[280px] min-[400px]:w-[370px] md:w-[452px] xl:hidden">
+                    <Swiper
+                        className="hidden"
+                        modules={[Navigation, Pagination, EffectCoverflow]}
+                        slidesPerView={'auto'}
+                        pagination
+                        navigation
+                        loop
+                        effect={'coverflow'}
+                        grabCursor
+                        coverflowEffect={{
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 2.5
+                        }}
+                    >
+                        {High.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Image src={`/linhas-masculinas/${item.linha}/${item.url}`} width={452} height={550} alt="Notebook" onClick={() => openModal(item.id)} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <div className="max-w-[800px] h-full my-8 border-t border-t-gray-400 pt-8 gap-2 flex flex-col justify-center items-start lg:border-none lg:my-0 lg:pt-0 lg:pl-10">
+                    <div className="w-64 m-auto hidden xl:flex justify-center items-center mb-5 min-[400px]:w-[500px]">
                         <Image src={`/linhas-masculinas/HIGH/${imageOfModal}`} width={452} height={550} alt="Logo" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">DESCRIÇÃO DO PRODUTO:</h3>
                     <p className="min-w-[250px] text-sm text-justify lg:text-md">O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.</p>
-                    <div className="flex flex-col justify-start text-sm my-4">
+                    <div className="flex flex-col justify-start gap-1 my-4">
                         <div className="flex items-center gap-2" onChange={handleShowUma}>
                             <input type="radio" checked={uma ? true : false} />
                             <label>1 Matéria</label>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
+import { Pagination, Autoplay, Navigation, EffectCoverflow } from 'swiper/modules'
 
 const Page = () => {
 
@@ -67,8 +67,31 @@ const Page = () => {
     return (
         <div className="pt-40 pb-20 flex flex-col justify-center items-center p-4 overflow-x-hidden">
             <div className="flex flex-col justify-center items-center gap-5 my-10 p-2 xl:flex-row xl:justify-start xl:items-start">
-                <div className="w-[280px] min-[400px]:w-[370px] md:w-[452px] lg:w-[full] xl:w-[300px]">
+                <div className="hidden xl:block xl:w-[200px] xl:h-[600px]">
                     <Swiper
+                        className="h-[750px]"
+                        direction={'vertical'}
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination]}
+                    >
+                        {Daijobu.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Image src={`/linhas-masculinas/${item.linha}/${item.url}`} width={452} height={550} alt="Notebook" onClick={() => openModal(item.id)} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <div className="w-[280px] min-[400px]:w-[370px] md:w-[452px] xl:hidden">
+                    <Swiper
+                        className="hidden"
                         modules={[Navigation, Pagination, EffectCoverflow]}
                         slidesPerView={'auto'}
                         pagination

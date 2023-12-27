@@ -120,7 +120,7 @@ export const Kingdom: Notebook[] = [
     { id: 9, linha: 'KINGDOM', name: 'KINGDOM-9', url: 'FOLHA-PRETO.png' }
 ]
 
-export const Motorcycle: Notebook[] = [
+export const Motorcycles: Notebook[] = [
     { id: 1, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-1', url: 'MOTORCYCLES-1.png' },
     { id: 2, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-2', url: 'MOTORCYCLES-2.png' },
     { id: 3, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-3', url: 'MOTORCYCLES-3.png' },
