@@ -91,7 +91,6 @@ const Page = () => {
                 </div>
                 <div className="w-[280px] min-[400px]:w-[370px] md:w-[452px] xl:hidden">
                     <Swiper
-                        className="hidden"
                         modules={[Navigation, Pagination, EffectCoverflow]}
                         slidesPerView={'auto'}
                         pagination
