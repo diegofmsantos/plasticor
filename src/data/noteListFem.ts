@@ -1,56 +1,74 @@
-import { Notebook } from "@/types/Notebook"
+import { Notebook } from "@/types/Notebook";
 
 export const NoteListFem: Notebook[] = [
-    { id: 1, linha: 'ASPECTS', name: 'ASPECTS-1', url: 'ASPECTS-1.png' },
-    { id: 2, linha: 'ASPECTS', name: 'ASPECTS-2', url: 'ASPECTS-2.png' },
-    { id: 3, linha: 'ASPECTS', name: 'ASPECTS-3', url: 'ASPECTS-3.png' },
-    { id: 4, linha: 'ASPECTS', name: 'ASPECTS-4', url: 'ASPECTS-4.png' },
-    { id: 5, linha: 'CAPRICHE', name: 'CAPRICHE-1', url: 'CAPRICHE-1.png' },
-    { id: 6, linha: 'CAPRICHE', name: 'CAPRICHE-2', url: 'CAPRICHE-2.png' },
-    { id: 7, linha: 'CAPRICHE', name: 'CAPRICHE-3', url: 'CAPRICHE-3.png' },
-    { id: 8, linha: 'CAPRICHE', name: 'CAPRICHE-4', url: 'CAPRICHE-4.png' },
-    { id: 9, linha: 'CHARM', name: 'CHARM-1', url: 'CHARM-1.png' },
-    { id: 10, linha: 'CHARM', name: 'CHARM-2', url: 'CHARM-2.png' },
-    { id: 11, linha: 'CHARM', name: 'CHARM-3', url: 'CHARM-3.png' },
-    { id: 12, linha: 'CHARM', name: 'CHARM-4', url: 'CHARM-4.png' },
-    { id: 13, linha: 'COLOUR', name: 'COLOUR-1', url: 'COLOUR-1.png' },
-    { id: 14, linha: 'COLOUR', name: 'COLOUR-2', url: 'COLOUR-2.png' },
-    { id: 15, linha: 'COLOUR', name: 'COLOUR-3', url: 'COLOUR-3.png' },
-    { id: 16, linha: 'COLOUR', name: 'COLOUR-4', url: 'COLOUR-4.png' },
-    { id: 17, linha: 'COSMUS', name: 'COSMUS-1', url: 'COSMUS-1.png' },
-    { id: 18, linha: 'COSMUS', name: 'COSMUS-2', url: 'COSMUS-2.png' },
-    { id: 19, linha: 'COSMUS', name: 'COSMUS-3', url: 'COSMUS-3.png' },
-    { id: 20, linha: 'COSMUS', name: 'COSMUS-4', url: 'COSMUS-4.png' },
-    { id: 21, linha: 'CUTE', name: 'CUTE-1', url: 'CUTE-1.png' },
-    { id: 22, linha: 'CUTE', name: 'CUTE-2', url: 'CUTE-2.png' },
-    { id: 23, linha: 'CUTE', name: 'CUTE-3', url: 'CUTE-3.png' },
-    { id: 24, linha: 'CUTE', name: 'CUTE-4', url: 'CUTE-4.png' },
-    { id: 25, linha: 'FLYS', name: 'FLYS-1', url: 'FLYS-1.png' },
-    { id: 26, linha: 'FLYS', name: 'FLYS-2', url: 'FLYS-2.png' },
-    { id: 27, linha: 'FLYS', name: 'FLYS-3', url: 'FLYS-3.png' },
-    { id: 28, linha: 'FLYS', name: 'FLYS-4', url: 'FLYS-4.png' },
-    { id: 29, linha: 'LOVE', name: 'LOVE-1', url: 'LOVE-1.png' },
-    { id: 30, linha: 'LOVE', name: 'LOVE-2', url: 'LOVE-2.png' },
-    { id: 31, linha: 'LOVE', name: 'LOVE-3', url: 'LOVE-3.png' },
-    { id: 32, linha: 'LOVE', name: 'LOVE-4', url: 'LOVE-4.png' },
-    { id: 33, linha: 'MOMENTS', name: 'MOMENTS-1', url: 'MOMENTS-1.png' },
-    { id: 34, linha: 'MOMENTS', name: 'MOMENTS-2', url: 'MOMENTS-2.png' },
-    { id: 35, linha: 'MOMENTS', name: 'MOMENTS-3', url: 'MOMENTS-3.png' },
-    { id: 36, linha: 'MOMENTS', name: 'MOMENTS-4', url: 'MOMENTS-4.png' },
-    { id: 37, linha: 'PETS', name: 'PETS-1', url: 'PETS-1.png' },
-    { id: 38, linha: 'PETS', name: 'PETS-2', url: 'PETS-2.png' },
-    { id: 39, linha: 'PETS', name: 'PETS-3', url: 'PETS-3.png' },
-    { id: 40, linha: 'PETS', name: 'PETS-4', url: 'PETS-4.png' },
-    { id: 41, linha: 'TROPICALIENTE', name: 'TROPICALIENTE-1', url: 'TROPICALIENTE-1.png' },
-    { id: 42, linha: 'TROPICALIENTE', name: 'TROPICALIENTE-2', url: 'TROPICALIENTE-2.png' },
-    { id: 43, linha: 'TROPICALIENTE', name: 'TROPICALIENTE-3', url: 'TROPICALIENTE-3.png' },
-    { id: 44, linha: 'TROPICALIENTE', name: 'TROPICALIENTE-4', url: 'TROPICALIENTE-4.png' },
-    { id: 45, linha: 'UNICORN-WORLD', name: 'UNICORN-1', url: 'UNICORN-WORLD-1.png' },
-    { id: 46, linha: 'UNICORN-WORLD', name: 'UNICORN-2', url: 'UNICORN-WORLD-2.png' },
-    { id: 47, linha: 'UNICORN-WORLD', name: 'UNICORN-3', url: 'UNICORN-WORLD-3.png' },
-    { id: 48, linha: 'UNICORN-WORLD', name: 'UNICORN-4', url: 'UNICORN-WORLD-4.png' },
-    { id: 49, linha: 'WEIRD', name: 'WEIRD-1', url: 'WEIRD-1.png' },
-    { id: 50, linha: 'WEIRD', name: 'WEIRD-2', url: 'WEIRD-2.png' },
-    { id: 51, linha: 'WEIRD', name: 'WEIRD-3', url: 'WEIRD-3.png' },
-    { id: 52, linha: 'WEIRD', name: 'WEIRD-4', url: 'WEIRD-4.png' }
-]
+    {
+        id: 1,
+        linha: 'ASPECTS',
+        url: [
+            'ASPECTS-1.png',
+            'ASPECTS-2.png',
+            'ASPECTS-3.png',
+            'ASPECTS-4.png'
+        ]
+    },
+    {
+        id: 2,
+        linha: 'CAPRICHE',
+        url: ['CAPRICHE-1.png', 'CAPRICHE-2.png', 'CAPRICHE-3.png', 'CAPRICHE-4.png']
+    },
+    {
+        id: 3,
+        linha: 'CHARM',
+        url: ['CHARM-1.png', 'CHARM-2.png', 'CHARM-3.png', 'CHARM-4.png']
+    },
+    {
+        id: 4,
+        linha: 'COLOUR',
+        url: ['COLOUR-1.png', 'COLOUR-2.png', 'COLOUR-3.png', 'COLOUR-4.png']
+    },
+    {
+        id: 5,
+        linha: 'COSMUS',
+        url: ['COSMUS-1.png', 'COSMUS-2.png', 'COSMUS-3.png', 'COSMUS-4.png']
+    },
+    {
+        id: 6,
+        linha: 'CUTE',
+        url: ['CUTE-1.png', 'CUTE-2.png', 'CUTE-3.png', 'CUTE-4.png']
+    },
+    {
+        id: 7,
+        linha: 'FLYS',
+        url: ['FLYS-1.png', 'FLYS-2.png', 'FLYS-3.png', 'FLYS-4.png']
+    },
+    {
+        id: 8,
+        linha: 'LOVE',
+        url: ['LOVE-1.png', 'LOVE-2.png', 'LOVE-3.png', 'LOVE-4.png']
+    },
+    {
+        id: 9,
+        linha: 'MOMENTS',
+        url: ['MOMENTS-1.png', 'MOMENTS-2.png', 'MOMENTS-3.png', 'MOMENTS-4.png']
+    },
+    {
+        id: 10,
+        linha: 'PETS',
+        url: ['PETS-1.png', 'PETS-2.png', 'PETS-3.png', 'PETS-4.png']
+    },
+    {
+        id: 11,
+        linha: 'TROPICALIENTE',
+        url: ['TROPICALIENTE-1.png', 'TROPICALIENTE-2.png', 'TROPICALIENTE-3.png', 'TROPICALIENTE-4.png']
+    },
+    {
+        id: 12,
+        linha: 'UNICORN-WORLD',
+        url: ['UNICORN-WORLD-1.png', 'UNICORN-WORLD-2.png', 'UNICORN-WORLD-3.png', 'UNICORN-WORLD-4.png']
+    },
+    {
+        id: 13,
+        linha: 'WEIRD',
+        url: ['WEIRD-1.png', 'WEIRD-2.png', 'WEIRD-3.png', 'WEIRD-4.png']
+    }
+];

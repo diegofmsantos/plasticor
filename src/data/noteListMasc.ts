@@ -1,64 +1,79 @@
-import { Notebook } from "@/types/Notebook"
+import { Notebook } from "@/types/Notebook";
 
 export const NoteListMasc: Notebook[] = [
-    { id: 1, linha: 'CODE', name: 'CODE-1', url: 'CODE-1.png' },
-    { id: 2, linha: 'CODE', name: 'CODE-2', url: 'CODE-2.png' },
-    { id: 3, linha: 'CODE', name: 'CODE-3', url: 'CODE-3.png' },
-    { id: 4, linha: 'CODE', name: 'CODE-4', url: 'CODE-4.png' },
-    { id: 5, linha: 'DAIJOBU', name: 'DAIJOBU-1', url: 'DAIJOBU-1.png' },
-    { id: 6, linha: 'DAIJOBU', name: 'DAIJOBU-2', url: 'DAIJOBU-2.png' },
-    { id: 7, linha: 'DAIJOBU', name: 'DAIJOBU-3', url: 'DAIJOBU-3.png' },
-    { id: 8, linha: 'DAIJOBU', name: 'DAIJOBU-4', url: 'DAIJOBU-4.png' },
-    { id: 9, linha: 'EPIC-GAMES', name: 'EPIC-GAMES-1', url: 'EPIC-GAMES-1.png' },
-    { id: 10, linha: 'EPIC-GAMES', name: 'EPIC-GAMES-2', url: 'EPIC-GAMES-2.png' },
-    { id: 11, linha: 'EPIC-GAMES', name: 'EPIC-GAMES-3', url: 'EPIC-GAMES-3.png' },
-    { id: 12, linha: 'EPIC-GAMES', name: 'EPIC-GAMES-4', url: 'EPIC-GAMES-4.png' },
-    { id: 13, linha: 'FIGHT-CLUB', name: 'FIGHT-CLUB-1', url: 'FIGHT-CLUB-1.png' },
-    { id: 14, linha: 'FIGHT-CLUB', name: 'FIGHT-CLUB-2', url: 'FIGHT-CLUB-2.png' },
-    { id: 15, linha: 'FIGHT-CLUB', name: 'FIGHT-CLUB-3', url: 'FIGHT-CLUB-3.png' },
-    { id: 16, linha: 'FIGHT-CLUB', name: 'FIGHT-CLUB-4', url: 'FIGHT-CLUB-4.png' },
-    { id: 17, linha: 'GOL', name: 'GOL-1', url: 'GOL-1.png' },
-    { id: 18, linha: 'GOL', name: 'GOL-2', url: 'GOL-2.png' },
-    { id: 19, linha: 'GOL', name: 'GOL-3', url: 'GOL-3.png' },
-    { id: 20, linha: 'GOL', name: 'GOL-4', url: 'GOL-4.png' },
-    { id: 21, linha: 'GOSPEL', name: 'GOSPEL-1', url: 'GOSPEL-1.png' },
-    { id: 22, linha: 'GOSPEL', name: 'GOSPEL-2', url: 'GOSPEL-2.png' },
-    { id: 23, linha: 'GOSPEL', name: 'GOSPEL-3', url: 'GOSPEL-3.png' },
-    { id: 24, linha: 'GOSPEL', name: 'GOSPEL-4', url: 'GOSPEL-4.png' },
-    { id: 25, linha: 'GRAFITTI', name: 'GRAFITTI-1', url: 'GRAFITTI-1.png' },
-    { id: 26, linha: 'GRAFITTI', name: 'GRAFITTI-2', url: 'GRAFITTI-2.png' },
-    { id: 27, linha: 'GRAFITTI', name: 'GRAFITTI-3', url: 'GRAFITTI-3.png' },
-    { id: 28, linha: 'GRAFITTI', name: 'GRAFITTI-4', url: 'GRAFITTI-4.png' },
-    { id: 29, linha: 'HEROES', name: 'HEROES-1', url: 'HEROES-1.png' },
-    { id: 30, linha: 'HEROES', name: 'HEROES-2', url: 'HEROES-2.png' },
-    { id: 31, linha: 'HEROES', name: 'HEROES-3', url: 'HEROES-3.png' },
-    { id: 32, linha: 'HEROES', name: 'HEROES-4', url: 'HEROES-4.png' },
-    { id: 33, linha: 'HIGH', name: 'HIGH-1', url: 'HIGH-1.png' },
-    { id: 34, linha: 'HIGH', name: 'HIGH-2', url: 'HIGH-2.png' },
-    { id: 35, linha: 'HIGH', name: 'HIGH-3', url: 'HIGH-3.png' },
-    { id: 36, linha: 'HIGH', name: 'HIGH-4', url: 'HIGH-4.png' },
-    { id: 37, linha: 'KINGDOM', name: 'KINGDOM-1', url: 'KINGDOM-1.png' },
-    { id: 38, linha: 'KINGDOM', name: 'KINGDOM-2', url: 'KINGDOM-2.png' },
-    { id: 39, linha: 'KINGDOM', name: 'KINGDOM-3', url: 'KINGDOM-3.png' },
-    { id: 40, linha: 'KINGDOM', name: 'KINGDOM-4', url: 'KINGDOM-4.png' },
-    { id: 41, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-1', url: 'MOTORCYCLES-1.png' },
-    { id: 42, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-2', url: 'MOTORCYCLES-2.png' },
-    { id: 43, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-3', url: 'MOTORCYCLES-3.png' },
-    { id: 44, linha: 'MOTORCYCLES', name: 'MOTORCYCLES-4', url: 'MOTORCYCLES-4.png' },
-    { id: 45, linha: 'SK8', name: 'SK8-1', url: 'SK8-1.png' },
-    { id: 46, linha: 'SK8', name: 'SK8-2', url: 'SK8-2.png' },
-    { id: 47, linha: 'SK8', name: 'SK8-3', url: 'SK8-3.png' },
-    { id: 48, linha: 'SK8', name: 'SK8-4', url: 'SK8-4.png' },
-    { id: 49, linha: 'SKULL', name: 'SKULL-1', url: 'SKULL-1.png' },
-    { id: 50, linha: 'SKULL', name: 'SKULL-2', url: 'SKULL-2.png' },
-    { id: 51, linha: 'SKULL', name: 'SKULL-3', url: 'SKULL-3.png' },
-    { id: 52, linha: 'SKULL', name: 'SKULL-4', url: 'SKULL-4.png' },
-    { id: 53, linha: 'SPORT-MIX', name: 'SPORT MIX-1', url: 'SPORTMIX-1.png' },
-    { id: 54, linha: 'SPORT-MIX', name: 'SPORT MIX-2', url: 'SPORTMIX-2.png' },
-    { id: 55, linha: 'SPORT-MIX', name: 'SPORT MIX-3', url: 'SPORTMIX-3.png' },
-    { id: 56, linha: 'SPORT-MIX', name: 'SPORT MIX-4', url: 'SPORTMIX-4.png' },
-    { id: 57, linha: 'VELOZES-E-TUNADOS', name: 'VELOZES E TUNADOS-1', url: 'VELOZES-E-TUNADOS-1.png' },
-    { id: 58, linha: 'VELOZES-E-TUNADOS', name: 'VELOZES E TUNADOS-2', url: 'VELOZES-E-TUNADOS-2.png' },
-    { id: 59, linha: 'VELOZES-E-TUNADOS', name: 'VELOZES E TUNADOS-3', url: 'VELOZES-E-TUNADOS-3.png' },
-    { id: 60, linha: 'VELOZES-E-TUNADOS', name: 'VELOZES E TUNADOS-4', url: 'VELOZES-E-TUNADOS-4.png' }
-]
+    {
+        id: 1,
+        linha: 'CODE',
+        url: ['CODE-1.png', 'CODE-2.png', 'CODE-3.png', 'CODE-4.png']
+    },
+    {
+        id: 2,
+        linha: 'DAIJOBU',
+        url: ['DAIJOBU-1.png', 'DAIJOBU-2.png', 'DAIJOBU-3.png', 'DAIJOBU-4.png']
+    },
+    {
+        id: 3,
+        linha: 'EPIC-GAMES',
+        url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png']
+    },
+    {
+        id: 4,
+        linha: 'FIGHT-CLUB',
+        url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png']
+    },
+    {
+        id: 5,
+        linha: 'GOL',
+        url: ['GOL-1.png', 'GOL-2.png', 'GOL-3.png', 'GOL-4.png']
+    },
+    {
+        id: 6,
+        linha: 'GOSPEL',
+        url: ['GOSPEL-1.png', 'GOSPEL-2.png', 'GOSPEL-3.png', 'GOSPEL-4.png']
+    },
+    {
+        id: 7,
+        linha: 'GRAFITTI',
+        url: ['GRAFITTI-1.png', 'GRAFITTI-2.png', 'GRAFITTI-3.png', 'GRAFITTI-4.png']
+    },
+    {
+        id: 8,
+        linha: 'HEROES',
+        url: ['HEROES-1.png', 'HEROES-2.png', 'HEROES-3.png', 'HEROES-4.png']
+    },
+    {
+        id: 9,
+        linha: 'HIGH',
+        url: ['HIGH-1.png', 'HIGH-2.png', 'HIGH-3.png', 'HIGH-4.png']
+    },
+    {
+        id: 10,
+        linha: 'KINGDOM',
+        url: ['KINGDOM-1.png', 'KINGDOM-2.png', 'KINGDOM-3.png', 'KINGDOM-4.png']
+    },
+    {
+        id: 11,
+        linha: 'MOTORCYCLES',
+        url: ['MOTORCYCLES-1.png', 'MOTORCYCLES-2.png', 'MOTORCYCLES-3.png', 'MOTORCYCLES-4.png']
+    },
+    {
+        id: 12,
+        linha: 'SK8',
+        url: ['SK8-1.png', 'SK8-2.png', 'SK8-3.png', 'SK8-4.png']
+    },
+    {
+        id: 13,
+        linha: 'SKULL',
+        url: ['SKULL-1.png', 'SKULL-2.png', 'SKULL-3.png', 'SKULL-4.png']
+    },
+    {
+        id: 14,
+        linha: 'SPORT-MIX',
+        url: ['SPORTMIX-1.png', 'SPORTMIX-2.png', 'SPORTMIX-3.png', 'SPORTMIX-4.png']
+    },
+    {
+        id: 15,
+        linha: 'VELOZES-E-TUNADOS',
+        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png']
+    }
+];
