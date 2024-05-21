@@ -31,7 +31,7 @@ export const NotebookTabs = async () => {
                     </TabsTrigger>
                 ))}
             </TabsList>
-            <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {noteMasc.map(item => (
                     <TabsContent value="masculino" className="m-auto">
                         <Carousel key={item.id} className="w-56 my-8">
