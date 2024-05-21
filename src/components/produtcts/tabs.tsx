@@ -63,12 +63,12 @@ export const NotebookTabs = async () => {
                     </TabsContent>
                 ))}
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {noteFem.map(item => (
                     <TabsContent value="feminino" className="m-auto">
                         <Carousel key={item.id} className="w-56 my-8 flex justify-center items-center flex-col gap-2">
                             <CarouselContent className="w-[200px]">
-                                <CarouselItem className="w-40 h-52 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                                <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                                     <div className="w-48">
                                         <Image src={`/assets/linhas-femininas/${item.linha}/${item.url[0]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                                     </div>
@@ -96,12 +96,12 @@ export const NotebookTabs = async () => {
                     </TabsContent>
                 ))}
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {noteKids.map(item => (
                     <TabsContent value="kids" className="m-auto">
                         <Carousel key={item.id} className="w-56 my-8 flex justify-center items-center flex-col gap-2">
-                            <CarouselContent className="w-[250px]">
-                                <CarouselItem className="w-40 h-52 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                            <CarouselContent className="w-[200px]">
+                                <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                                     <div className="w-48">
                                         <Image src={`/assets/linhas-kids/${item.linha}/${item.url[0]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                                     </div>
