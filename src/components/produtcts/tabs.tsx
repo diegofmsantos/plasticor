@@ -16,22 +16,9 @@ export const NotebookTabs = async () => {
 
 
     const tabs: Tab[] = [
-        {
-            title: 'MASCULINO',
-            value: 'masculino',
-            products: noteMasc.map(item => item)
-        },
-        {
-            title: 'FEMININO',
-            value: 'feminino',
-            products: noteFem.map(item => item)
-        },
-        {
-            title: 'KIDS',
-            value: 'kids',
-            products: noteKids.map(item => item)
-        }
-
+        { title: 'MASCULINO', value: 'masculino', products: noteMasc.map(item => item) },
+        { title: 'FEMININO', value: 'feminino', products: noteFem.map(item => item) },
+        { title: 'KIDS', value: 'kids', products: noteKids.map(item => item) }
     ]
 
     return (
@@ -43,43 +30,42 @@ export const NotebookTabs = async () => {
                     </TabsTrigger>
                 ))}
             </TabsList>
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-5 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
                 {tabs[0].products.map(item => (
                     <TabsContent value="masculino" className="mt-6">
                         <div key={item.id} className="flex justify-center items-center flex-col gap-2 p-4">
-                            <div className="w-52 h-60">
-                                <Image src={`/assets/linhas-masculinas/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full"/>
+                            <div className="w-40 h-52 sm:w-48 sm:h-60 md:w-52 md:h-64">
+                                <Image src={`/assets/linhas-masculinas/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                             <div className="w-40 h-8 text-center">{item.name}</div>
                         </div>
                     </TabsContent>
                 ))}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-5 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
                 {tabs[1].products.map(item => (
                     <TabsContent value="feminino" className="mt-6">
                         <div key={item.id} className="flex justify-center items-center flex-col gap-2 p-4">
-                            <div className="w-52 h-60">
-                                <Image src={`/assets/linhas-femininas/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full"/>
+                            <div className="w-40 h-52 sm:w-48 sm:h-60 md:w-52 md:h-64">
+                                <Image src={`/assets/linhas-femininas/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                             <div className="w-40 h-8 text-center">{item.name}</div>
                         </div>
                     </TabsContent>
                 ))}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-5 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
                 {tabs[2].products.map(item => (
                     <TabsContent value="kids" className="mt-6">
                         <div key={item.id} className="flex justify-center items-center flex-col gap-2 p-4">
-                            <div className="w-52 h-60">
-                                <Image src={`/assets/linhas-kids/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full"/>
+                            <div className="w-40 h-52 sm:w-48 sm:h-60 md:w-52 md:h-64">
+                                <Image src={`/assets/linhas-kids/${item.linha}/${item.url}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                             <div className="w-40 h-8 text-center">{item.name}</div>
                         </div>
                     </TabsContent>
                 ))}
             </div>
-
         </Tabs>
     )
 }
