@@ -8,9 +8,8 @@ export const CartSidebar = () => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button>
-                    <ShoppingCartIcon className="mr-2" />
-                    <p>Carrinho</p>
+                <Button className="text-white bg-transparent w-20 h-20">
+                    <ShoppingCartIcon className="w-full h-full" />
                 </Button>
             </SheetTrigger>
             <SheetContent>
