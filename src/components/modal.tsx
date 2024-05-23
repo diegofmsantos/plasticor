@@ -37,7 +37,7 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
             <DialogTrigger asChild>
                 <Button className={`w-40 h-8`}>Comprar</Button>
             </DialogTrigger>
-            <DialogContent className="h-[800px] flex flex-col justify-around items-center">
+            <DialogContent className="h-[750px] flex flex-col justify-around items-center">
                 <DialogHeader>
                     <DialogTitle className="mb-2">{name}</DialogTitle>
                     <Carousel className="w-[250px] h-[270px] flex m-auto">
@@ -59,14 +59,14 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                 </DialogHeader>
                 <div>
                     <div className="mb-4 text-center">Matérias</div>
-                    <div className="flex flex-wrap justify-center items-center gap-5">
+                    <div className="flex flex-wrap justify-center items-center gap-3">
                         {materias.map((item, index) => {
                             const isSelected = selectedItem === index;
                             return (
                                 <Button
                                     key={index}
                                     onClick={() => handleSelect(index)}
-                                    className={`border p-2 w-20 text-center font-bold ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
+                                    className={`border p-1 w-24 text-center font-bold ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
                                     {item}
                                 </Button>
