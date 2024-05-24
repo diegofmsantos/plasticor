@@ -14,20 +14,17 @@ type Props = {
 };
 
 export const Modal = ({ name, image, materias, valores }: Props) => {
-    const [selectedItem, setSelectedItem] = useState<number | null>(null);
+    const [selectedMaterialIndex, setSelectedMaterialIndex] = useState<number | null>(null);
     const [quantity, setQuantity] = useState(0);
 
-    const handleSelect = (index: number) => {
-        if (selectedItem === index) {
-            setSelectedItem(null);
-        } else {
-            setSelectedItem(index);
-        }
+    const handleClickMaterial = (index: number) => {
+        setSelectedMaterialIndex(index);
     };
 
     const calculateTotal = () => {
-        if (selectedItem !== null && quantity > 0) {
-            return (quantity * valores[selectedItem]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        if (selectedMaterialIndex !== null && quantity > 0) {
+            const valorUnitario = valores[selectedMaterialIndex];
+            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         return '0,00';
     };
@@ -35,18 +32,20 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className={`w-40 h-8`}>Comprar</Button>
+                <Button className={`w-48 h-8 bg-[#C1C2C3] font-bold text-md hover:bg-[#002372]`}>Comprar</Button>
             </DialogTrigger>
-            <DialogContent className="h-[750px] flex flex-col justify-around items-center">
+            <DialogContent className="h-[780px] flex flex-col justify-around items-center">
                 <DialogHeader>
-                    <DialogTitle className="mb-2">{name}</DialogTitle>
-                    <Carousel className="w-[250px] h-[270px] flex m-auto">
+                    <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{name}</DialogTitle>
+                    <Carousel className="w-[250px] h-[280px] flex m-auto">
                         <CarouselContent>
                             {image.map((image, index) => (
-                                <CarouselItem key={index} className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                                <CarouselItem key={index} className="w-40 h-72 p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                                     <div className="w-52">
                                         <Image src={image} width={150} height={150} alt="Image" className="w-52 h-64" />
                                     </div>
+                                    <div className="font-bold h-10 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
+
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
@@ -58,15 +57,15 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                     </DialogDescription>
                 </DialogHeader>
                 <div>
-                    <div className="mb-4 text-center">Matérias</div>
+                    <div className="mb-4 text-center font-bold">Matérias</div>
                     <div className="flex flex-wrap justify-center items-center gap-3">
                         {materias.map((item, index) => {
-                            const isSelected = selectedItem === index;
+                            const isSelected = selectedMaterialIndex === index;
                             return (
                                 <Button
                                     key={index}
-                                    onClick={() => handleSelect(index)}
-                                    className={`border p-1 w-24 text-center font-bold ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
+                                    onClick={() => handleClickMaterial(index)}
+                                    className={`border  p-1 w-24 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
                                     {item}
                                 </Button>
@@ -74,16 +73,16 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                         })}
                     </div>
                 </div>
-                <div className="">
-                    <div className="text-center">Caixas</div>
+                <div>
+                    <div className="text-center font-bold">Caixas</div>
                     <input
                         type="number"
                         className="border p-1 outline-none"
                         value={quantity <= 0 ? '' : quantity}
                         onChange={(e) => setQuantity(+e.target.value)}
                     />
-                    <div className="text-center mt-3 text-2xl text-[#002372]">
-                        {quantity > 0 && valores[selectedItem !== null ? selectedItem : 0] ? `${calculateTotal()}` : ''}
+                    <div className="text-center h-10 mt-3 text-2xl text-[#002372]">
+                        {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
                     </div>
                 </div>
                 <Button className="bg-green-500 w-40">Adicionar</Button>
