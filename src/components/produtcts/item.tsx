@@ -16,22 +16,22 @@ export const ProductItem = ({ item }: Props) => {
                     <CarouselContent className="w-[250px]">
                         <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                             <div className="w-48">
-                                <Image src={`/assets/linha-masculina/${item.linha}/${item.url[0]}`} width={150} height={150} alt="Image" className="w-full h-full" priority />
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[0]}`} width={150} height={150} alt="Image" className="w-full h-full" priority />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                             <div className="w-48">
-                                <Image src={`/assets/linha-masculina/${item.linha}/${item.url[1]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[1]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                             <div className="w-48">
-                                <Image src={`/assets/linha-masculina/${item.linha}/${item.url[2]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[2]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-52 md:h-64">
                             <div className="w-48">
-                                <Image src={`/assets/linha-masculina/${item.linha}/${item.url[3]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                                <Image src={`/assets/linha-reduzida/${item.linha}/${item.url[3]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>

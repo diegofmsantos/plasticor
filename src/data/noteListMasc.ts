@@ -111,12 +111,12 @@ export const NoteListMasc: Notebook[] = [
         linha: 'SPORT-MIX',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['SPORTMIX-1.png', 'SPORTMIX-2.png', 'SPORTMIX-3.png', 'SPORTMIX-4.png']
+        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png']
     },
     {
         id: 15,
         codigos: [4229, 4225, 4226, 4227, 4228],
-        linha: 'VELOZES-E-TUNADOS',
+        linha: 'VELOZES E TUNADOS',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
         url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png']
