@@ -25,7 +25,7 @@ export const NotebookTabs = async () => {
         <Tabs defaultValue="masculino">
             <TabsList className="flex">
                 {tabs.map(item => (
-                    <TabsTrigger key={item.value} value={item.value} className="flex-1">
+                    <TabsTrigger key={item.value} value={item.value} className="flex-1 font-bold">
                         {item.title}
                     </TabsTrigger>
                 ))}

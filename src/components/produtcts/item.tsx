@@ -31,14 +31,14 @@ export const ProductItem = ({ item }: Props) => {
                         </CarouselItem>
                         <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-52 md:h-64">
                             <div className="w-48">
-                                <Image src={`/assets/linha-reduzida/${item.linha}/${item.url[3]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[3]}`} width={150} height={150} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious className="w-10 h-10 bg-[#002372] text-white border border-black" />
                     <CarouselNext className="w-10 h-10 bg-[#002372] text-white border border-black" />
                 </Carousel>
-                <Modal name={item.linha} image={item.url.map(url => `/assets/linha-masculina/${item.linha}/${url}`)} materias={item.materias} valores={item.valores} />
+                <Modal name={item.linha} image={item.url.map(url => `/assets/linhas/${item.linha}/${url}`)} materias={item.materias} valores={item.valores} />
             </div>
         </div>
     )

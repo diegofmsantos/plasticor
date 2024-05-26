@@ -1,38 +1,51 @@
 "use client"
 
-import React, { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import React, { useState } from "react"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Button } from "./ui/button";
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@radix-ui/react-toast";
 
 type Props = {
     name: string;
     image: string[];
-    materias: string[];
-    valores: number[];
+    materias: string[]
+    valores: number[]
 };
 
 export const Modal = ({ name, image, materias, valores }: Props) => {
-    const [selectedMaterialIndex, setSelectedMaterialIndex] = useState<number | null>(null);
-    const [quantity, setQuantity] = useState(0);
+    const [selectedMaterialIndex, setSelectedMaterialIndex] = useState<number | null>(null)
+    const [quantity, setQuantity] = useState(0)
 
     const handleClickMaterial = (index: number) => {
-        setSelectedMaterialIndex(index);
-    };
+        setSelectedMaterialIndex(index)
+    }
 
     const calculateTotal = () => {
         if (selectedMaterialIndex !== null && quantity > 0) {
             const valorUnitario = valores[selectedMaterialIndex];
-            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         }
-        return '0,00';
-    };
+        return '0,00'
+    }
+
+    const { toast } = useToast()
+
+    const handleAddButton = () => {
+        toast({
+            title: 'Adicionado ao carrinho!',
+            action: <ToastAction className="text-white" altText="fechar">Fechar</ToastAction>
+        })
+    }
 
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className={`w-48 h-8 bg-[#C1C2C3] font-bold text-md hover:bg-[#002372]`}>Comprar</Button>
+                <Button className={`w-48 h-8 bg-[#C1C2C3] font-bold text-md hover:bg-[#002372]`}>
+                    Comprar
+                </Button>
             </DialogTrigger>
             <DialogContent className="h-[780px] flex flex-col justify-around items-center">
                 <DialogHeader>
@@ -85,8 +98,8 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                         {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
                     </div>
                 </div>
-                <Button className="bg-green-500 w-40">Adicionar</Button>
+                <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
             </DialogContent>
         </Dialog>
-    );
-};
+    )
+}

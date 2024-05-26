@@ -7,9 +7,10 @@ export const CartSidebar = () => {
 
     return (
         <Sheet>
-            <SheetTrigger asChild>
-                <Button className="text-white bg-transparent w-20 h-20">
-                    <ShoppingCartIcon className="w-full h-full" />
+            <SheetTrigger asChild className="p-0">
+                <Button className="flex gap-2 text-white bg-red-600 w-32 h-8">
+                    <span className="font-bold">Carrinho</span>
+                    <ShoppingCartIcon className="" />
                 </Button>
             </SheetTrigger>
             <SheetContent>

@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,7 +33,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-        </ThemeProvider></body>
+          <Toaster />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
