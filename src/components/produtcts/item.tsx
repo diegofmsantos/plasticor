@@ -38,7 +38,7 @@ export const ProductItem = ({ item }: Props) => {
                     <CarouselPrevious className="w-10 h-10 bg-[#002372] text-white border border-black" />
                     <CarouselNext className="w-10 h-10 bg-[#002372] text-white border border-black" />
                 </Carousel>
-                <Modal name={item.linha} image={item.url.map(url => `/assets/linhas/${item.linha}/${url}`)} materias={item.materias} valores={item.valores} />
+                <Modal item={item} image={item.url.map(url => `/assets/linhas/${item.linha}/${url}`)} />
             </div>
         </div>
     )

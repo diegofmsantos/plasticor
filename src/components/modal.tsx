@@ -7,15 +7,15 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
+import { useCartStore } from "@/stores/cart-store";
+import { Notebook } from "@/types/Notebook";
 
 type Props = {
-    name: string;
+    item: Notebook
     image: string[];
-    materias: string[]
-    valores: number[]
 };
 
-export const Modal = ({ name, image, materias, valores }: Props) => {
+export const Modal = ({ item, image }: Props) => {
     const [selectedMaterialIndex, setSelectedMaterialIndex] = useState<number | null>(null)
     const [quantity, setQuantity] = useState(0)
 
@@ -25,15 +25,18 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
 
     const calculateTotal = () => {
         if (selectedMaterialIndex !== null && quantity > 0) {
-            const valorUnitario = valores[selectedMaterialIndex];
+            const valorUnitario = item.valores[selectedMaterialIndex];
             return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         }
         return '0,00'
     }
 
     const { toast } = useToast()
+    const { upsertCartItem } = useCartStore(state => state)
 
     const handleAddButton = () => {
+        upsertCartItem(item, 1)
+
         toast({
             title: 'Adicionado ao carrinho!',
             action: <ToastAction className="text-white" altText="fechar">Fechar</ToastAction>
@@ -49,7 +52,7 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
             </DialogTrigger>
             <DialogContent className="h-[770px] flex flex-col justify-around items-center">
                 <DialogHeader>
-                    <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{name}</DialogTitle>
+                    <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
                     <Carousel className="w-[250px] h-[280px] flex m-auto">
                         <CarouselContent>
                             {image.map((image, index) => (
@@ -57,7 +60,7 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                                     <div className="w-52">
                                         <Image src={image} width={150} height={150} alt="Image" className="w-52 h-64" />
                                     </div>
-                                    <div className="font-bold h-8 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
+                                    <div className="font-bold h-8 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${item.valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
 
                                 </CarouselItem>
                             ))}
@@ -72,7 +75,7 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                 <div>
                     <div className="mb-4 text-center font-bold">Matérias</div>
                     <div className="flex flex-wrap justify-center items-center gap-3">
-                        {materias.map((item, index) => {
+                        {item.materias.map((item, index) => {
                             const isSelected = selectedMaterialIndex === index;
                             return (
                                 <Button

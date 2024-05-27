@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <div className="w-full overflow-x-hidden">
       <Header />
-      <div className="mx-3">
+      <div className="mx-3 mt-28">
         <Suspense fallback={<NotebookSkeleton />}>
           <NotebookTabs />
         </Suspense>
