@@ -47,17 +47,17 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                     Comprar
                 </Button>
             </DialogTrigger>
-            <DialogContent className="h-[780px] flex flex-col justify-around items-center">
+            <DialogContent className="h-[770px] flex flex-col justify-around items-center">
                 <DialogHeader>
                     <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{name}</DialogTitle>
                     <Carousel className="w-[250px] h-[280px] flex m-auto">
                         <CarouselContent>
                             {image.map((image, index) => (
-                                <CarouselItem key={index} className="w-40 h-72 p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                                <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
                                     <div className="w-52">
                                         <Image src={image} width={150} height={150} alt="Image" className="w-52 h-64" />
                                     </div>
-                                    <div className="font-bold h-10 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
+                                    <div className="font-bold h-8 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
 
                                 </CarouselItem>
                             ))}
@@ -94,7 +94,7 @@ export const Modal = ({ name, image, materias, valores }: Props) => {
                         value={quantity <= 0 ? '' : quantity}
                         onChange={(e) => setQuantity(+e.target.value)}
                     />
-                    <div className="text-center h-10 mt-3 text-2xl text-[#002372]">
+                    <div className="text-center h-8 mt-3 text-2xl text-[#002372]">
                         {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
                     </div>
                 </div>
