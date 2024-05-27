@@ -34,7 +34,7 @@ export const Modal = ({ item, image }: Props) => {
     const { toast } = useToast()
     const { upsertCartItem } = useCartStore(state => state)
 
-    const handleAddButton = () => {
+    const handleAddButton = (id: number) => {
         upsertCartItem(item, 1)
 
         toast({
@@ -101,7 +101,7 @@ export const Modal = ({ item, image }: Props) => {
                         {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
                     </div>
                 </div>
-                <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
+                <Button onClick={() => handleAddButton(item.id)} className="bg-green-500 w-40">Adicionar</Button>
             </DialogContent>
         </Dialog>
     )
