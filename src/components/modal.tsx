@@ -2,17 +2,16 @@
 
 import React, { useState } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useToast } from "@/components/ui/use-toast";
-import { ToastAction } from "@radix-ui/react-toast";
-import { useCartStore } from "@/stores/cart-store";
-import { Notebook } from "@/types/Notebook";
+import { useToast } from "@/components/ui/use-toast"
+import { useCartStore } from "@/stores/cart-store"
+import { Notebook } from "@/types/Notebook"
 
 type Props = {
     item: Notebook
-    image: string[];
+    image: string[]
 };
 
 export const Modal = ({ item, image }: Props) => {
@@ -25,23 +24,35 @@ export const Modal = ({ item, image }: Props) => {
 
     const calculateTotal = () => {
         if (selectedMaterialIndex !== null && quantity > 0) {
-            const valorUnitario = item.valores[selectedMaterialIndex];
-            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          const valorUnitario = item.valores[selectedMaterialIndex];
+          return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         return '0,00'
-    }
+      }
+
 
     const { toast } = useToast()
     const { upsertCartItem } = useCartStore(state => state)
 
-    const handleAddButton = (id: number) => {
-        upsertCartItem(item, 1)
-
+    const handleAddButton = () => {
+        if (selectedMaterialIndex === null || quantity <= 0) {
+          return;
+        }
+      
+        const selectedItem = {
+          product: item,
+          selectedMaterialIndex,
+          price: item.valores[selectedMaterialIndex],
+          quantity: quantity
+        }
+      
+        upsertCartItem(selectedItem);
+      
         toast({
-            title: 'Adicionado ao carrinho!',
-            action: <ToastAction className="text-white" altText="fechar">Fechar</ToastAction>
+          title: 'Adicionado ao carrinho!',
         })
-    }
+      }
+      
 
     return (
         <Dialog>
@@ -61,7 +72,6 @@ export const Modal = ({ item, image }: Props) => {
                                         <Image src={image} width={150} height={150} alt="Image" className="w-52 h-64" />
                                     </div>
                                     <div className="font-bold h-8 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${item.valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
-
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
@@ -75,7 +85,7 @@ export const Modal = ({ item, image }: Props) => {
                 <div>
                     <div className="mb-4 text-center font-bold">Matérias</div>
                     <div className="flex flex-wrap justify-center items-center gap-3">
-                        {item.materias.map((item, index) => {
+                        {item.materias.map((material, index) => {
                             const isSelected = selectedMaterialIndex === index;
                             return (
                                 <Button
@@ -83,9 +93,9 @@ export const Modal = ({ item, image }: Props) => {
                                     onClick={() => handleClickMaterial(index)}
                                     className={`border  p-1 w-24 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
-                                    {item}
+                                    {material}
                                 </Button>
-                            );
+                            )
                         })}
                     </div>
                 </div>
@@ -98,10 +108,10 @@ export const Modal = ({ item, image }: Props) => {
                         onChange={(e) => setQuantity(+e.target.value)}
                     />
                     <div className="text-center h-8 mt-3 text-2xl text-[#002372]">
-                        {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
+                       R$ {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
                     </div>
                 </div>
-                <Button onClick={() => handleAddButton(item.id)} className="bg-green-500 w-40">Adicionar</Button>
+                <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
             </DialogContent>
         </Dialog>
     )

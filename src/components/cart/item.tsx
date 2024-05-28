@@ -1,27 +1,27 @@
-import { Cart } from "@/types/Cart"
-import Image from "next/image"
+import { CartItem } from "@/types/Cart"
 import { CartItemQuantity } from "./item-quantity"
 
-type Props = {
-    item: Cart
+type ItemCartProps = {
+    item: CartItem
+    quantity: number
 }
 
-export const CartItem = ({ item }: Props) => {
-
-    const totalPrice = (item.product.valores[item.product.id] * item.quantity).toFixed(2)
-
+export const ItemCart = ({ item, quantity }: ItemCartProps) => {
     return (
-        <div className="flex items-center gap-5">
-            <div className="w-16 overflow-hidden">
-                <Image src={`/assets/linhas/${item.product.linha}/${item.product.url[item.product.id]}`} width={50} height={50} alt="foto" />
+        <div className="flex justify-between items-center">
+            <div className="flex gap-2">
+                <div className="w-10">
+                    <img
+                        src={`/assets/linhas/${item.product.linha}/${item.product.url[item.selectedMaterialIndex]}`}
+                        alt="foto"
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <span className="text-xs">{item.product.linha} {item.product.materias[item.selectedMaterialIndex]}</span>
+                    <span className="font-bold text-sm">R$ {(item.price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
             </div>
-            <div className="flex-1">
-                <p className="text-md">{item.product.linha}</p>
-                <p className="text-xs opacity-50">R$ {totalPrice}</p>
-            </div>
-            <div>
-                <CartItemQuantity cartItem={item} />
-            </div>
+            <CartItemQuantity cartItem={item} />
         </div>
     )
 }

@@ -1,6 +1,8 @@
-import { Notebook } from "./Notebook"
+import { Notebook } from "@/types/Notebook"
 
-export type Cart = {
+export type CartItem = {
     product: Notebook
     quantity: number
+    selectedMaterialIndex: number
+    price: number
 }
