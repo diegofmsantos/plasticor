@@ -8,24 +8,28 @@ type Props = {
 }
 
 export const CartItemQuantity = ({ cartItem }: Props) => {
-  const { upsertCartItem } = useCartStore(state => state);
+  const { upsertCartItem, removeCartItem } = useCartStore(state => state);
 
   const handlePlusButton = () => {
     upsertCartItem({
       product: cartItem.product,
-      quantity: 1,
+      quantity: 1, // Increment by 1
       selectedMaterialIndex: cartItem.selectedMaterialIndex,
-      price: cartItem.price // Include the price from the original cartItem
-    }, cartItem);
+      price: cartItem.price
+    });
   }
 
   const handleMinusButton = () => {
-    upsertCartItem({
-      product: cartItem.product,
-      quantity: cartItem.quantity > 0 ? -1 : 0, // Prevent negative quantity
-      selectedMaterialIndex: cartItem.selectedMaterialIndex,
-      price: cartItem.price // Include the price from the original cartItem
-    }, cartItem);
+    if (cartItem.quantity === 1) {
+      removeCartItem(cartItem);
+    } else {
+      upsertCartItem({
+        product: cartItem.product,
+        quantity: -1, // Decrement by 1
+        selectedMaterialIndex: cartItem.selectedMaterialIndex,
+        price: cartItem.price
+      });
+    }
   }
 
   return (
@@ -35,7 +39,6 @@ export const CartItemQuantity = ({ cartItem }: Props) => {
         variant="ghost"
         size="icon"
         className="size-5 text-red-500"
-        disabled={cartItem.quantity === 0} // Disable minus button for zero quantity
       >
         <MinusIcon />
       </Button>

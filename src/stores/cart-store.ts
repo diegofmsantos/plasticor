@@ -1,30 +1,45 @@
-import { CartItem } from "@/types/Cart"
-import { Notebook } from "@/types/Notebook"
-import { create } from "zustand"
+import create from 'zustand'
+import { CartItem } from '@/types/Cart'
+import { Notebook } from '@/types/Notebook'
 
-type States = { cart: CartItem[] }
-type Actions = { upsertCartItem: (newItem: CartItem, cartItem?: CartItem) => void }
-const initialState: States = { cart: [] }
+type CartStore = {
+  cart: CartItem[]
+  upsertCartItem: (newItem: CartItem) => void
+  removeCartItem: (item: CartItem) => void
+}
 
-export const useCartStore = create<States & Actions>()(set => ({
-  ...initialState,
-  upsertCartItem: (newItem, cartItem?: CartItem) => set(state => {
-    let newCart = state.cart.slice(); // Create a copy to avoid mutation
-    let productIndex = newCart.findIndex(
-      item => item.product.id === newItem.product.id && item.selectedMaterialIndex === newItem.selectedMaterialIndex
-    );
+export const useCartStore = create<CartStore>((set, get) => ({
+  cart: [],
+  upsertCartItem: (newItem) => {
+    set(state => {
+      const cart = state.cart.slice()
+      const index = cart.findIndex(item =>
+        item.product.id === newItem.product.id &&
+        item.selectedMaterialIndex === newItem.selectedMaterialIndex
+      )
 
-    if (productIndex >= 0) {
-      newCart[productIndex].quantity += newItem.quantity; // Update quantity
-    } else {
-      newCart.push({
-        product: newItem.product,
-        quantity: newItem.quantity,
-        selectedMaterialIndex: newItem.selectedMaterialIndex,
-        price: cartItem?.price || 0 // Use price from cartItem if available, or default to 0
-      });
-    }
+      if (index >= 0) {
+        cart[index].quantity += newItem.quantity
 
-    return { ...state, cart: newCart };
-  })
+        // Remove item if quantity is zero or less
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1)
+        }
+      } else {
+        if (newItem.quantity > 0) {
+          cart.push({ ...newItem })
+        }
+      }
+
+      return { cart }
+    })
+  },
+  removeCartItem: (itemToRemove) => {
+    set(state => ({
+      cart: state.cart.filter(item =>
+        !(item.product.id === itemToRemove.product.id &&
+        item.selectedMaterialIndex === itemToRemove.selectedMaterialIndex)
+      )
+    }))
+  }
 }))

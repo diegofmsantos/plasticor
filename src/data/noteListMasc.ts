@@ -7,7 +7,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'CODE',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['CODE-1.png', 'CODE-2.png', 'CODE-3.png', 'CODE-4.png']
+        url: ['CODE-1.png', 'CODE-2.png', 'CODE-3.png', 'CODE-4.png', 'CODE-5.png']
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'DAIJOBU',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['DAIJOBU-1.png', 'DAIJOBU-2.png', 'DAIJOBU-3.png', 'DAIJOBU-4.png']
+        url: ['DAIJOBU-1.png', 'DAIJOBU-2.png', 'DAIJOBU-3.png', 'DAIJOBU-4.png', 'DAIJOBU-5.png']
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'EPIC-GAMES',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png']
+        url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png', 'EPIC-GAMES-5.png']
     },
     {
         id: 4,
@@ -31,7 +31,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'FIGHT-CLUB',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png']
+        url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png', 'FIGHT-CLUB-5.png']
     },
     {
         id: 5,
@@ -39,7 +39,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'GOL',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['GOL-1.png', 'GOL-2.png', 'GOL-3.png', 'GOL-4.png']
+        url: ['GOL-1.png', 'GOL-2.png', 'GOL-3.png', 'GOL-4.png', 'GOL-5.png']
     },
     {
         id: 6,
@@ -47,7 +47,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'GOSPEL',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['GOSPEL-1.png', 'GOSPEL-2.png', 'GOSPEL-3.png', 'GOSPEL-4.png']
+        url: ['GOSPEL-1.png', 'GOSPEL-2.png', 'GOSPEL-3.png', 'GOSPEL-4.png', 'GOSPEL-5.png']
     },
     {
         id: 7,
@@ -55,7 +55,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'GRAFITTI',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['GRAFITTI-1.png', 'GRAFITTI-2.png', 'GRAFITTI-3.png', 'GRAFITTI-4.png']
+        url: ['GRAFITTI-1.png', 'GRAFITTI-2.png', 'GRAFITTI-3.png', 'GRAFITTI-4.png', 'GRAFITTI-5.png']
     },
     {
         id: 8,
@@ -63,7 +63,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'HEROES',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['HEROES-1.png', 'HEROES-2.png', 'HEROES-3.png', 'HEROES-4.png']
+        url: ['HEROES-1.png', 'HEROES-2.png', 'HEROES-3.png', 'HEROES-4.png', 'HEROES-5.png']
     },
     {
         id: 9,
@@ -71,7 +71,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'HIGH',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['HIGH-1.png', 'HIGH-2.png', 'HIGH-3.png', 'HIGH-4.png']
+        url: ['HIGH-1.png', 'HIGH-2.png', 'HIGH-3.png', 'HIGH-4.png', 'HIGH-5.png']
     },
     {
         id: 10,
@@ -79,7 +79,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'KINGDOM',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['KINGDOM-1.png', 'KINGDOM-2.png', 'KINGDOM-3.png', 'KINGDOM-4.png']
+        url: ['KINGDOM-1.png', 'KINGDOM-2.png', 'KINGDOM-3.png', 'KINGDOM-4.png', 'KINGDOM-5.png']
     },
     {
         id: 11,
@@ -87,7 +87,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'MOTORCYCLES',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['MOTORCYCLES-1.png', 'MOTORCYCLES-2.png', 'MOTORCYCLES-3.png', 'MOTORCYCLES-4.png']
+        url: ['MOTORCYCLES-1.png', 'MOTORCYCLES-2.png', 'MOTORCYCLES-3.png', 'MOTORCYCLES-4.png', 'MOTORCYCLES-5.png']
     },
     {
         id: 12,
@@ -95,7 +95,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'SK8',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['SK8-1.png', 'SK8-2.png', 'SK8-3.png', 'SK8-4.png']
+        url: ['SK8-1.png', 'SK8-2.png', 'SK8-3.png', 'SK8-4.png', 'SK8-5.png']
     },
     {
         id: 13,
@@ -103,7 +103,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'SKULL',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['SKULL-1.png', 'SKULL-2.png', 'SKULL-3.png', 'SKULL-4.png']
+        url: ['SKULL-1.png', 'SKULL-2.png', 'SKULL-3.png', 'SKULL-4.png', 'SKULL-5.png']
     },
     {
         id: 14,
@@ -111,7 +111,7 @@ export const NoteListMasc: Notebook[] = [
         linha: 'SPORT-MIX',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png']
+        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png', 'SPORT-MIX-5.png']
     },
     {
         id: 15,
@@ -119,6 +119,6 @@ export const NoteListMasc: Notebook[] = [
         linha: 'VELOZES E TUNADOS',
         materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png']
+        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png', 'VELOZES-E-TUNADOS-5.png']
     }
 ];

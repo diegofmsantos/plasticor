@@ -18,7 +18,7 @@ export const ItemCart = ({ item, quantity }: ItemCartProps) => {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-xs">{item.product.linha} {item.product.materias[item.selectedMaterialIndex]}</span>
-                    <span className="font-bold text-sm">R$ {(item.price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    <span className="font-bold text-sm">R$ {(item.price * item.quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
             </div>
             <CartItemQuantity cartItem={item} />

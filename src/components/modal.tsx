@@ -28,8 +28,7 @@ export const Modal = ({ item, image }: Props) => {
           return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         return '0,00'
-      }
-
+    }
 
     const { toast } = useToast()
     const { upsertCartItem } = useCartStore(state => state)
@@ -43,7 +42,7 @@ export const Modal = ({ item, image }: Props) => {
           product: item,
           selectedMaterialIndex,
           price: item.valores[selectedMaterialIndex],
-          quantity: quantity
+          quantity: quantity // Ensure the quantity is being passed correctly
         }
       
         upsertCartItem(selectedItem);
@@ -51,8 +50,9 @@ export const Modal = ({ item, image }: Props) => {
         toast({
           title: 'Adicionado ao carrinho!',
         })
+
+        setQuantity(0)
       }
-      
 
     return (
         <Dialog>
@@ -108,7 +108,7 @@ export const Modal = ({ item, image }: Props) => {
                         onChange={(e) => setQuantity(+e.target.value)}
                     />
                     <div className="text-center h-8 mt-3 text-2xl text-[#002372]">
-                       R$ {quantity > 0 && selectedMaterialIndex !== null ? `${calculateTotal()}` : ''}
+                        {quantity > 0 && selectedMaterialIndex !== null ? `R$ ${calculateTotal()}` : ''}
                     </div>
                 </div>
                 <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
