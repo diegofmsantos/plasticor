@@ -1,6 +1,5 @@
-import create from 'zustand'
+import { create } from 'zustand'
 import { CartItem } from '@/types/Cart'
-import { Notebook } from '@/types/Notebook'
 
 type CartStore = {
   cart: CartItem[]
@@ -21,7 +20,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
       if (index >= 0) {
         cart[index].quantity += newItem.quantity
 
-        // Remove item if quantity is zero or less
         if (cart[index].quantity <= 0) {
           cart.splice(index, 1)
         }
@@ -38,7 +36,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
     set(state => ({
       cart: state.cart.filter(item =>
         !(item.product.id === itemToRemove.product.id &&
-        item.selectedMaterialIndex === itemToRemove.selectedMaterialIndex)
+          item.selectedMaterialIndex === itemToRemove.selectedMaterialIndex)
       )
     }))
   }

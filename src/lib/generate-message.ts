@@ -7,7 +7,7 @@ export const generateMessage = () => {
 
     let pedidos = []
     for(let  item of cart) {
-        pedidos.push(`${item.quantity} x ${item.product.linha}: ${item.price}`)
+        pedidos.push(`R$ ${item.quantity} x ${item.product.linha}: ${item.price}`)
     }
 
     return `**Dados do Cliente:**
