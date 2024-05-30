@@ -35,7 +35,7 @@ export const useCheckoutStore = create<States & Actions>()(set => ({
     setNome: (nome) => set(state => ({ ...state, nome })),
     setCnpj: (cnpj) => set(state => ({ ...state, cnpj })),
     setEndereco: (endereco) => set(state => ({ ...state, endereco })),
-    setEmail: (email) => set(state => ({ state, email })),
+    setEmail: (email) => set(state => ({ ...state, email })),
     setTelefone: (telefone) => set(state => ({ ...state, telefone })),
     setPagamento: (pagamento) => set(state => ({ ...state, pagamento })),
     setFrete: (frete) => set(state => ({ ...state, frete }))

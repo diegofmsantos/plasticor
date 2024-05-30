@@ -64,7 +64,7 @@ export const Modal = ({ item, image }: Props) => {
             <DialogContent className="h-[770px] flex flex-col justify-around items-center">
                 <DialogHeader>
                     <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
-                    <Carousel className="w-[250px] h-[280px] flex m-auto">
+                    <Carousel className="w-[250px] h-[270px] flex m-auto">
                         <CarouselContent>
                             {image.map((image, index) => (
                                 <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
@@ -75,8 +75,8 @@ export const Modal = ({ item, image }: Props) => {
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        <CarouselPrevious className="w-14 border border-black" />
-                        <CarouselNext className="w-14 border border-black" />
+                        <CarouselPrevious className="border border-gray-500 " />
+                        <CarouselNext className="border border-gray-500 " />
                     </Carousel>
                     <DialogDescription className="text-justify">
                         O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.
@@ -91,7 +91,7 @@ export const Modal = ({ item, image }: Props) => {
                                 <Button
                                     key={index}
                                     onClick={() => handleClickMaterial(index)}
-                                    className={`border  p-1 w-24 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
+                                    className={`border border-gray-400  p-1 w-24 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
                                     {material}
                                 </Button>
@@ -103,7 +103,7 @@ export const Modal = ({ item, image }: Props) => {
                     <div className="text-center font-bold">Caixas</div>
                     <input
                         type="number"
-                        className="border p-1 outline-none"
+                        className="border border-gray-400 p-1 outline-none"
                         value={quantity <= 0 ? '' : quantity}
                         onChange={(e) => setQuantity(+e.target.value)}
                     />

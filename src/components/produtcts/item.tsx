@@ -9,29 +9,29 @@ export const ProductItem = ({ item }: Props) => {
 
     return (
         <div>
-            <div className="flex flex-col items-center gap-3 w-72">
-                <Carousel className="w-56 h-[270px]">
-                    <div className="text-center text-xl font-bold text-bg-[#002372]">{item.linha}
+            <div className="flex flex-col justify-center items-center gap-1 w-72">
+                <Carousel className="w-64 h-[290px] flex flex-col justify-center items-center">
+                    <div className="text-center text-lg font-bold text-bg-[#002372]">{item.linha}
                     </div>
-                    <CarouselContent className="w-[250px]">
-                        <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-48">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[0]}`} width={150} height={150} alt="Image" className="w-full h-full" priority />
+                    <CarouselContent className="w-[300px]">
+                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                            <div className="w-52">
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[0]}`} width={170} height={170} alt="Image" className="w-full h-full" priority />
                             </div>
                         </CarouselItem>
-                        <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-48">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[1]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                            <div className="w-52">
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[1]}`} width={170} height={170} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
-                        <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-48">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[2]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                            <div className="w-52">
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[2]}`} width={170} height={170} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
-                        <CarouselItem className="w-40 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-52 md:h-64">
-                            <div className="w-48">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[3]}`} width={150} height={150} alt="Image" className="w-full h-full" />
+                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-52 md:h-64">
+                            <div className="w-52">
+                                <Image src={`/assets/linhas/${item.linha}/${item.url[3]}`} width={170} height={170} alt="Image" className="w-full h-full" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>

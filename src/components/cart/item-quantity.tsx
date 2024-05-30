@@ -42,7 +42,7 @@ export const CartItemQuantity = ({ cartItem }: Props) => {
       >
         <MinusIcon />
       </Button>
-      <div className="text-xs">{cartItem.quantity}</div>
+      <div className="text-xs border p-2">{cartItem.quantity}</div>
       <Button
         onClick={handlePlusButton}
         variant="ghost"

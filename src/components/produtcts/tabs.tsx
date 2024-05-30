@@ -23,18 +23,18 @@ export const NotebookTabs = async () => {
 
     return (
         <Tabs defaultValue="masculino">
-            <TabsList className="flex">
+            <TabsList className="flex w-full fixed z-50 pr-5">
                 {tabs.map(item => (
                     <TabsTrigger key={item.value} value={item.value} className="flex-1 font-bold">
                         {item.title}
                     </TabsTrigger>
                 ))}
             </TabsList>
-            <div className="my-8">
+            <div className="my-8 pt-12">
                 {tabs.map(item => (
                     <TabsContent key={item.value} value={item.value}>
                         {item.products.length > 0 &&
-                            <div className="flex flex-wrap justify-around items-center gap-14 px-8">
+                            <div className="flex flex-wrap justify-center m-auto items-center gap-14 px-8">
                                 {item.products.map(product => (
                                     <ProductItem key={product.id} item={product} />
                                 ))}
