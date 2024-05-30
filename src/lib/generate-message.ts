@@ -6,8 +6,8 @@ export const generateMessage = () => {
     const { cart } = useCartStore(state => state)
 
     let pedidos = []
-    for(let  item of cart) {
-        pedidos.push(`R$ ${item.quantity} x ${item.product.linha}: ${item.price}`)
+    for (let item of cart) {
+        pedidos.push(`${item.quantity} x ${item.product.linha} (${item.product.materias[item.selectedMaterialIndex]}): ${item.quantity * item.price}`)
     }
 
     return `**Dados do Cliente:**
@@ -21,6 +21,6 @@ Frete: ${frete}
 
 ----------------
 **Pedido**
-${pedidos.join("/n")}
+${pedidos.join("\n")}
 `
 }

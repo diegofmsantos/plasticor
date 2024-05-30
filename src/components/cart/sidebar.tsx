@@ -46,7 +46,7 @@ export const CartSidebar = () => {
                         <ItemCart
                             key={`${item.product.id}-${item.selectedMaterialIndex}`}
                             item={item}
-                            quantity={item.quantity} />
+                        />
                     ))}
                 </div>
                 <Separator className="my-4" />
