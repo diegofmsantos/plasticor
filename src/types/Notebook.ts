@@ -7,4 +7,5 @@ export type Notebook = {
     materias: string[]
     valores: number[]
     url: string[]
+    urlts?: string;
 }

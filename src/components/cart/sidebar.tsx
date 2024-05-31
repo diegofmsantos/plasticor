@@ -1,27 +1,21 @@
 "use client"
 
-import { useState } from "react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
-import { ShoppingCartIcon } from "lucide-react"
-import { Separator } from "@/components/ui/separator"
-import { useCartStore } from "@/stores/cart-store"
-import { ItemCart } from "./item"
-import { CheckoutDialog } from "../checkout/dialog"
+import { useState } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { ShoppingCartIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { useCartStore } from "@/stores/cart-store";
+import { ItemCart } from "./item";
+import { CheckoutDialog } from "../checkout/dialog";
+import { CartItem } from "@/types/Cart";
 
 export const CartSidebar = () => {
-    const [checkoutOpen, setCheckoutOpen] = useState(false)
-    const [desconto, setDesconto] = useState("")
-    const { cart } = useCartStore(state => state)
+    const [checkoutOpen, setCheckoutOpen] = useState(false);
+    const { cart, subtotal, desconto, totalFinal, setDesconto } = useCartStore(state => state);
 
-    let subtotal = 0
-    for (let item of cart) {
-        subtotal += (item.price * item.quantity)
-    }
-
-    const descontoValue = parseFloat(desconto) || 0;
+    const descontoValue = parseFloat(desconto.toString()) || 0;
     const descontoReais = subtotal * (descontoValue / 100);
-    const totalFinal = subtotal - descontoReais;
 
     return (
         <Sheet>
@@ -42,7 +36,7 @@ export const CartSidebar = () => {
                 </SheetHeader>
                 <Separator />
                 <div className="flex flex-col gap-5 my-3">
-                    {cart.map(item => (
+                    {cart.map((item: CartItem) => (
                         <ItemCart
                             key={`${item.product.id}-${item.selectedMaterialIndex}`}
                             item={item}
@@ -60,8 +54,8 @@ export const CartSidebar = () => {
                     <div className="flex flex-col justify-center items-center text-center text-xs font-bold text-[#002372]">
                         <p>DESCONTO (%)</p>
                         <input
-                            value={desconto}
-                            onChange={e => setDesconto(e.target.value)}
+                            value={desconto < 0 ? '' : desconto}
+                            onChange={e => setDesconto(parseFloat(e.target.value))}
                             type="number"
                             className="w-40 pl-16 h-10 text-2xl text-[#002372] outline-none border border-gray-300" />
                         <div className="text-xl text-red-400 w-40 h-7 flex justify-center items-center">
