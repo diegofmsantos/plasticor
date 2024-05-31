@@ -8,21 +8,25 @@ export const generateMessage = () => {
     let pedidos = []
     let valorTotal = 0
     for (let item of cart) {
-        valorTotal = (item.quantity * item.price)
+        valorTotal += (item.quantity * item.price)
         pedidos.push(`${item.quantity} x ${item.product.linha} (${item.product.materias[item.selectedMaterialIndex]}): R$ ${valorTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
     }
+    const valorTotalFormatado = valorTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    console.log(nome, cnpj, endereco, email, telefone, pagamento, frete, cart)
 
     return `**Dados do Cliente:**
-Nome: ${nome}
-CNPJ: ${cnpj}
-Endereço: ${endereco}
-E-mail: ${email}
-Telefone: ${telefone}
-Forma de pagamento: ${pagamento}
-Frete: ${frete}
+  Nome: ${nome}
+  CNPJ: ${cnpj}
+  Endereço: ${endereco}
+  E-mail: ${email}
+  Telefone: ${telefone}
+  Forma de pagamento: ${pagamento}
+  Frete: ${frete}
 
-----------------
-**Pedido**
-${pedidos.join("\n")}
-`
+  ----------------
+  **Pedido**
+  ${pedidos.join("\n")}
+  **Total:** R$ ${valorTotalFormatado}
+  `
 }

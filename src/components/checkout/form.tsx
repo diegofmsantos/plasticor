@@ -7,6 +7,7 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { generateMessage } from '@/lib/generate-message'
+import { useEffect, useState } from 'react'
 
 const formSchema = z.object({
     nome: z.string({
@@ -33,13 +34,22 @@ const formSchema = z.object({
 })
 
 export const FormClient = () => {
-
     const { nome, setNome, cnpj, setCnpj, endereco, setEndereco, email, setEmail, telefone, setTelefone, pagamento, setPagamento, frete, setFrete } = useCheckoutStore(state => state)
+
+    const [formData, setFormData] = useState({
+        nome: nome,
+        cnpj: cnpj,
+        endereco: endereco,
+        email: email,
+        telefone: telefone,
+        pagamento: pagamento,
+        frete: frete
+    });
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: { nome, cnpj, endereco, email, telefone, pagamento, frete }
-    })
+        defaultValues: formData
+    });
 
     const onSubmit = (values: z.infer<typeof formSchema>) => {
         setNome(values.nome)
@@ -53,6 +63,24 @@ export const FormClient = () => {
 
     const message = generateMessage()
     const linkWhats = `https://wa.me//${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`
+
+    useEffect(() => {
+        // Verifique se o checkoutStore está disponível
+        if (!nome || !cnpj || !endereco || !email || !telefone || !pagamento || !frete) {
+            return; // Retorne se os dados do checkoutStore ainda não estiverem prontos
+        }
+
+        // Preencha o estado do formulário com os dados do checkoutStore
+        setFormData({
+            nome,
+            cnpj,
+            endereco,
+            email,
+            telefone,
+            pagamento,
+            frete
+        });
+    }, [nome, cnpj, endereco, email, telefone, pagamento, frete]); // Dependências do useEffect
 
     return (
         <Form {...form}>
@@ -71,16 +99,16 @@ export const FormClient = () => {
                         <FormMessage />
                     </FormItem>)}
                 />
-                <FormField control={form.control} name="endereco" render={({ field }) => (
+                <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Endereço:</FormLabel>
+                        <FormLabel className='text-lg'>E-mail:</FormLabel>
                         <FormControl><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
-                <FormField control={form.control} name="email" render={({ field }) => (
+                <FormField control={form.control} name="endereco" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Email:</FormLabel>
+                        <FormLabel className='text-lg'>Endereço:</FormLabel>
                         <FormControl><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
@@ -94,7 +122,7 @@ export const FormClient = () => {
                 />
                 <FormField control={form.control} name="pagamento" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Pagamento:</FormLabel>
+                        <FormLabel className='text-lg'>Forma de pagamento:</FormLabel>
                         <FormControl><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}

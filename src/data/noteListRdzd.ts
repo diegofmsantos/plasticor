@@ -138,7 +138,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'VELOZES E TUNADOS - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png', 'VELOZES-E-TUNADOS-5.png']
     },
     {
@@ -148,7 +148,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'MOTORCYCLES - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['MOTORCYCLES-1.png', 'MOTORCYCLES-2.png', 'MOTORCYCLES-3.png', 'MOTORCYCLES-4.png', 'MOTORCYCLES-5.png']
     },
     {
@@ -158,7 +158,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'SKULL - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['SKULL-1.png', 'SKULL-2.png', 'SKULL-3.png', 'SKULL-4.png', 'SKULL-5.png']
     },
     {
@@ -168,7 +168,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'EPIC-GAMES - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png', 'EPIC-GAMES-5.png']
     },
     {
@@ -178,7 +178,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'SPORT-MIX - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png', 'SPORT-MIX-5.png']
     },
     {
@@ -188,7 +188,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'CODE - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['CODE-1.png', 'CODE-2.png', 'CODE-3.png', 'CODE-4.png', 'CODE-5.png']
     },
     {
@@ -198,7 +198,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'HIGH - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['HIGH-1.png', 'HIGH-2.png', 'HIGH-3.png', 'HIGH-4.png', 'HIGH-5.png']
     },
     {
@@ -208,7 +208,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'GRAFITTI - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['GRAFITTI-1.png', 'GRAFITTI-2.png', 'GRAFITTI-3.png', 'GRAFITTI-4.png', 'GRAFITTI-5.png']
     },
     {
@@ -218,7 +218,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'DAIJOBU - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['DAIJOBU-1.png', 'DAIJOBU-2.png', 'DAIJOBU-3.png', 'DAIJOBU-4.png', 'DAIJOBU-5.png']
     },
     {
@@ -228,7 +228,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'KINGDOM - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['KINGDOM-1.png', 'KINGDOM-2.png', 'KINGDOM-3.png', 'KINGDOM-4.png', 'KINGDOM-5.png']
     },
     {
@@ -238,7 +238,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'FIGHT-CLUB - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png', 'FIGHT-CLUB-5.png']
     },
     {
@@ -248,7 +248,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'GOSPEL - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['GOSPEL-1.png', 'GOSPEL-2.png', 'GOSPEL-3.png', 'GOSPEL-4.png', 'GOSPEL-4.png', 'GOSPEL-5.png']
     },
     {
@@ -258,7 +258,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'SK8 - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['SK8-1.png', 'SK8-2.png', 'SK8-3.png', 'SK8-4.png', 'SK8-5.png']
     },
     {
@@ -268,7 +268,7 @@ export const NoteListRdzd: Notebook[] = [
         genero: 'masculino',
         linha: 'HEROES - Red',
         materias: ['10x1', '15X1', '20X1'],
-        valores: [434, 40, 482.88, 449.82],
+        valores: [434.40, 482.88, 449.82],
         url: ['HEROES-1.png', 'HEROES-2.png', 'HEROES-3.png', 'HEROES-4.png', 'HEROES-5.png']
     },
 ]
