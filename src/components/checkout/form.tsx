@@ -3,10 +3,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useCheckoutStore } from '@/stores/checkout-store'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from '../ui/input'
-import { Button } from '../ui/button'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { generateMessage } from '@/lib/generate-message'
 
 const formSchema = z.object({
@@ -47,7 +45,7 @@ export const FormClient = () => {
             pagamento: pagamento,
             frete: frete
         }
-    });
+    })
 
     const onSubmit = (values: z.infer<typeof formSchema>) => {
         setNome(values.nome)
@@ -57,10 +55,10 @@ export const FormClient = () => {
         setTelefone(values.telefone)
         setPagamento(values.pagamento)
         setFrete(values.frete)
-        
+
         const message = generateMessage()
         const linkWhats = `https://wa.me//${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`
-        
+
         window.open(linkWhats, '_blank')
     }
 

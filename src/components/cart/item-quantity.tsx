@@ -1,4 +1,4 @@
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 import { useCartStore } from "@/stores/cart-store"
 import { CartItem } from "@/types/Cart"
 import { MinusIcon, PlusIcon } from "lucide-react"
@@ -8,27 +8,27 @@ type Props = {
 }
 
 export const CartItemQuantity = ({ cartItem }: Props) => {
-  const { upsertCartItem, removeCartItem } = useCartStore(state => state);
+  const { upsertCartItem, removeCartItem } = useCartStore(state => state)
 
   const handlePlusButton = () => {
     upsertCartItem({
       product: cartItem.product,
-      quantity: 1, // Increment by 1
+      quantity: 1,
       selectedMaterialIndex: cartItem.selectedMaterialIndex,
       price: cartItem.price
-    });
+    })
   }
 
   const handleMinusButton = () => {
     if (cartItem.quantity === 1) {
-      removeCartItem(cartItem);
+      removeCartItem(cartItem)
     } else {
       upsertCartItem({
         product: cartItem.product,
-        quantity: -1, // Decrement by 1
+        quantity: -1,
         selectedMaterialIndex: cartItem.selectedMaterialIndex,
         price: cartItem.price
-      });
+      })
     }
   }
 
