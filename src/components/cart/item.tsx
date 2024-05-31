@@ -11,7 +11,7 @@ export const ItemCart = ({ item }: ItemCartProps) => {
             <div className="flex gap-2">
                 <div className="w-10">
                     <img
-                        src={`/assets/linhas/${item.product.linha}/${item.product.urlts[item.selectedMaterialIndex]}`}
+                        src={`/assets/linhas/${item.product.linha}/${item.product.url[item.selectedMaterialIndex]}`}
                         alt="foto"
                     />
                 </div>

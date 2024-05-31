@@ -24,7 +24,7 @@ export const Modal = ({ item, image }: Props) => {
 
     const calculateTotal = () => {
         if (selectedMaterialIndex !== null && quantity > 0) {
-            const valorUnitario = item.valores[selectedMaterialIndex]
+            const valorUnitario = item.valores[selectedMaterialIndex];
             return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         return '0,00'
@@ -35,14 +35,14 @@ export const Modal = ({ item, image }: Props) => {
 
     const handleAddButton = () => {
         if (selectedMaterialIndex === null || quantity <= 0) {
-            return
+            return;
         }
 
         const selectedItem = {
             product: item,
             selectedMaterialIndex,
             price: item.valores[selectedMaterialIndex],
-            quantity: quantity
+            quantity: quantity // Ensure the quantity is being passed correctly
         }
 
         upsertCartItem(selectedItem);
