@@ -8,6 +8,7 @@ type Props = {
 }
 
 export const CartItemQuantity = ({ cartItem }: Props) => {
+  // @ts-ignore
   const { upsertCartItem, removeCartItem } = useCartStore(state => state)
 
   const handlePlusButton = () => {
