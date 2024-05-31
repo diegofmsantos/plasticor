@@ -44,7 +44,7 @@ export const Modal = ({ item, image }: Props) => {
             price: item.valores[selectedMaterialIndex],
             quantity: quantity // Ensure the quantity is being passed correctly
         }
-
+        // @ts-ignore
         upsertCartItem(selectedItem);
 
         toast({
