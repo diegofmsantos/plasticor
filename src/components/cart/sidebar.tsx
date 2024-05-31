@@ -55,7 +55,7 @@ export const CartSidebar = () => {
                         <p>DESCONTO (%)</p>
                         <input
                             value={desconto}
-                            onChange={e => setDesconto(e.target.value)}
+                            onChange={e => setDesconto(+e.target.value)}
                             type="number"
                             className="w-40 pl-16 h-10 text-2xl text-[#002372] outline-none border border-gray-300" />
                         <div className="text-xl text-red-400 w-40 h-7 flex justify-center items-center">
