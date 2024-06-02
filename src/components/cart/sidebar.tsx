@@ -30,11 +30,11 @@ export const CartSidebar = () => {
                     }
                 </Button>
             </SheetTrigger>
-            <SheetContent>
-                <SheetHeader>
+            <SheetContent className="">
+                <SheetHeader className="mb-2">
                     <SheetTitle>Carrinho</SheetTitle>
                 </SheetHeader>
-                <Separator />
+                <Separator className="mb-4" />
                 <div className="flex flex-col gap-5 my-3">
                     {cart.map((item: CartItem) => (
                         <ItemCart
@@ -44,39 +44,39 @@ export const CartSidebar = () => {
                     ))}
                 </div>
                 <Separator className="my-4" />
-                <div className="flex flex-col justify-center items-center gap-4">
-                    <div className="flex flex-col items-center text-xs font-bold text-[#002372]">
-                        <div>SUBTOTAL</div>
-                        <div className="text-2xl w-40 h-10 flex justify-center items-center border border-gray-300">
+                <div className="flex flex-col justify-center items-center mt-16 gap-16">
+                    <div className="flex flex-col items-center text-xs font-bold text-black">
+                        <div className="mb-2 text-lg">SUBTOTAL</div>
+                        <div className="text-xl w-40 h-10 flex justify-center items-center border border-gray-300 text-gray-500">
                             R$ {subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center text-center text-xs font-bold text-[#002372]">
-                        <p>DESCONTO (%)</p>
+                    <div className="flex flex-col justify-center items-center text-center text-xs font-bold">
+                        <p className="mb-2 text-lg">DESCONTO (%)</p>
                         <input
                             value={desconto}
                             onChange={e => setDesconto(+e.target.value)}
                             type="number"
-                            className="w-40 pl-16 h-10 text-2xl text-[#002372] outline-none border border-gray-300" />
-                        <div className="text-xl text-red-400 w-40 h-7 flex justify-center items-center">
+                            className="w-40 pl-16 h-10 text-xl ] outline-none border border-gray-300 text-gray-500" />
+                        <div className="text-xl text-green-500 w-40 h-7 flex justify-center items-center">
                             {descontoReais > 0 &&
                                 <div>- R$ {descontoReais.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                             }
                         </div>
                     </div>
-                    <div className="flex flex-col items-center text-xs font-bold text-[#002372]">
+                    <div className="flex flex-col items-center text-xs font-bold text-black">
                         <p className="text-lg">TOTAL</p>
-                        <div className="text-2xl text-green-400 w-40 h-10 flex justify-center items-center border border-gray-300">
+                        <div className="text-xl text-gray-500 w-40 h-10 flex justify-center items-center border border-gray-300">
                             R$ {totalFinal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </div>
                     </div>
                 </div>
-                <Separator className="my-4" />
-                <div className="text-center">
+                <Separator className="mt-16" />
+                <div className="text-center fixed bottom-5 right-28">
                     <Button
                         onClick={() => setCheckoutOpen(true)}
                         disabled={cart.length === 0}
-                        className="bg-green-400 w-40 h-12 text-md hover:bg-green-600"
+                        className="bg-gray-400 w-40 h-12 text-md hover:bg-green-600"
                     >
                         Finalizar Compra
                     </Button>

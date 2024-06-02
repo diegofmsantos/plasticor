@@ -16,16 +16,27 @@ export const generateMessage = () => {
     return `
    *DADOS DO CLIENTE:*
    
-*Nome:* ${nome}
-*CNPJ:* ${cnpj}
+*CLIENTE:* ${nome}
+
+*CNPJ/CPF:* ${cnpj}
+
 *Endereço:* ${endereco}
-*E-mail:* ${email}
-*Telefone:* ${telefone}
-*Forma de pagamento:* ${pagamento}
+
+*E-MAIL:* ${email}
+
+*TELEFONE:* ${telefone}
+
+*Forma de Pagamento:* ${pagamento}
+
 *Frete:* ${frete}
----------------------
-   *Pedido*
+
+--------------------------------------
+
+*PEDIDO:*
+
 ${pedidos.join("\n")}
+
+*Caixas:* Total de caixas
 
 *Subtotal:* R$ ${subtotalFormatado}
 

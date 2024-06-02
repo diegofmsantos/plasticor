@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased"
+        "min-h-screen bg-background font-poppins antialiased"
       )}>
         {children}
         <Toaster />

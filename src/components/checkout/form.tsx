@@ -13,7 +13,7 @@ const formSchema = z.object({
     }).min(2, "Preencha o nome."),
     cnpj: z.string({
         required_error: "Preencha o CNPJ."
-    }).min(14, "CNPJ deve ter no mínimo 14 caracteres."),
+    }).min(11, "CNPJ/CPF deve ter no mínimo 11 caracteres."),
     endereco: z.string({
         required_error: "Preencha o endereço."
     }).min(5, "Endereço deve ter no mínimo 5 caracteres."),
@@ -64,53 +64,67 @@ export const FormClient = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4">
                 <FormField control={form.control} name="nome" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Nome:</FormLabel>
-                        <FormControl><Input {...field} autoFocus /></FormControl>
+                        <FormLabel className='text-lg text-black'>Cliente:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} autoFocus /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="cnpj" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>CNPJ:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>CNPJ/CPF:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>E-mail:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>E-mail:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="endereco" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Endereço:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>Endereço:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormMessage />
+                    </FormItem>)}
+                />
+                <FormField control={form.control} name="cep" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className='text-lg text-black'>CEP:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="telefone" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Telefone:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
-                        <FormMessage />
-                    </FormItem>)}
-                />
-                <FormField control={form.control} name="pagamento" render={({ field }) => (
-                    <FormItem>
-                        <FormLabel className='text-lg'>Forma de pagamento:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>Telefone:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="frete" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg'>Frete:</FormLabel>
-                        <FormControl><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>Frete:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormMessage />
+                    </FormItem>)}
+                />
+                <FormField control={form.control} name="transportadora" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className='text-lg text-black'>Transportadora:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormMessage />
+                    </FormItem>)}
+                />
+                <FormField control={form.control} name="pagamento" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className='text-lg text-black'>Condições de pagamento:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />

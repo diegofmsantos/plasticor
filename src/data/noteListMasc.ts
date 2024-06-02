@@ -5,7 +5,7 @@ export const NoteListMasc: Notebook[] = [
         id: 1,
         codigos: [4174, 4170, 4171, 4172, 4173],
         linha: 'CODE',
-        materias: ['1x1', '10x1', '12x1', '15x1', '20x1'],
+        materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
         url: ['CODE-1.png', 'CODE-2.png', 'CODE-3.png', 'CODE-4.png', 'CODE-5.png']
     },

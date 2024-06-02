@@ -17,6 +17,8 @@ type Props = {
 export const Modal = ({ item, image }: Props) => {
     const [selectedMaterialIndex, setSelectedMaterialIndex] = useState<number | null>(null)
     const [quantity, setQuantity] = useState(0)
+    const { toast } = useToast()
+    const { upsertCartItem } = useCartStore(state => state)
 
     const handleClickMaterial = (index: number) => {
         setSelectedMaterialIndex(index)
@@ -30,26 +32,21 @@ export const Modal = ({ item, image }: Props) => {
         return '0,00'
     }
 
-    const { toast } = useToast()
-    const { upsertCartItem } = useCartStore(state => state)
-
     const handleAddButton = () => {
         if (selectedMaterialIndex === null || quantity <= 0) {
-            return;
+            return
         }
 
         const selectedItem = {
             product: item,
             selectedMaterialIndex,
             price: item.valores[selectedMaterialIndex],
-            quantity: quantity // Ensure the quantity is being passed correctly
+            quantity: quantity
         }
         // @ts-ignore
-        upsertCartItem(selectedItem);
+        upsertCartItem(selectedItem)
 
-        toast({
-            title: 'Adicionado ao carrinho!',
-        })
+        toast({ title: 'Adicionado ao carrinho!' })
 
         setQuantity(0)
     }
@@ -61,29 +58,27 @@ export const Modal = ({ item, image }: Props) => {
                     Comprar
                 </Button>
             </DialogTrigger>
-            <DialogContent className="h-[770px] flex flex-col justify-around items-center">
+            <DialogContent className="h-[720px] flex flex-col justify-around items-center">
                 <DialogHeader>
-                    <DialogTitle className="text-center text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
-                    <Carousel className="w-[250px] h-[270px] flex m-auto">
+                    <DialogTitle className="text-center mb-2 text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
+                    <Carousel className="w-[250px] h-[290px] flex m-auto">
                         <CarouselContent>
                             {image.map((image, index) => (
-                                <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                                <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-72">
                                     <div className="w-52">
-                                        <Image src={image} width={150} height={150} alt="Image" className="w-52 h-64" />
+                                        <Image src={image} width={130} height={130} alt="Image" className="w-52 h-64" />
                                     </div>
-                                    <div className="font-bold h-8 my-2 text-[#002372]">{selectedMaterialIndex !== null ? `R$ ${item.valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
+                                    <div className="font-bold text-lg h-8 my-2 text-gray-500">{selectedMaterialIndex !== null ? `R$ ${item.valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious className="border border-gray-500 " />
                         <CarouselNext className="border border-gray-500 " />
                     </Carousel>
-                    <DialogDescription className="text-justify">
-                        O caderno Espiral Capa Dura Universitário possui capa dura com acabamento metalizado, parte interna decorada, bolso de papel decorada para guardar trabalhos e anotações, adesivos personalizados e folhas pautadas. Ideal para o dia a dia, na escola ou faculdade.
-                    </DialogDescription>
+                    
                 </DialogHeader>
                 <div>
-                    <div className="mb-4 text-center font-bold">Matérias</div>
+                    <div className="mb-4 text-center font-bold">MATÉRIAS</div>
                     <div className="flex flex-wrap justify-center items-center gap-3">
                         {item.materias.map((material, index) => {
                             const isSelected = selectedMaterialIndex === index;
@@ -91,7 +86,7 @@ export const Modal = ({ item, image }: Props) => {
                                 <Button
                                     key={index}
                                     onClick={() => handleClickMaterial(index)}
-                                    className={`border border-gray-400  p-1 w-24 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
+                                    className={`border w-28 border-gray-400 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
                                     {material}
                                 </Button>
@@ -100,16 +95,14 @@ export const Modal = ({ item, image }: Props) => {
                     </div>
                 </div>
                 <div>
-                    <div className="text-center font-bold">Caixas</div>
+                    <div className="text-center font-bold mb-4">CAIXAS</div>
                     <input
                         type="number"
-                        className="border border-gray-400 p-1 outline-none"
+                        className="border border-gray-400 p-1 outline-none flex justify-center items-center"
                         value={quantity <= 0 ? '' : quantity}
                         onChange={(e) => setQuantity(+e.target.value)}
                     />
-                    <div className="text-center h-8 mt-3 text-2xl text-[#002372]">
-                        {quantity > 0 && selectedMaterialIndex !== null ? `R$ ${calculateTotal()}` : ''}
-                    </div>
+                    
                 </div>
                 <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
             </DialogContent>
