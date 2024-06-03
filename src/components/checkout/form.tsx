@@ -190,7 +190,7 @@ export const FormClient = () => {
                         <FormMessage />
                     </FormItem>)}
                 />
-                {freteSelected === 'fob' && (
+                {freteSelected === 'FOB' && (
                     <FormField control={form.control} name="transportadora" render={({ field }) => (
                         <FormItem>
                             <FormLabel className='text-lg text-black'>TRANSPORTADORA:</FormLabel>
