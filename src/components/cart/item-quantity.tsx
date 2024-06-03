@@ -8,8 +8,7 @@ type Props = {
 }
 
 export const CartItemQuantity = ({ cartItem }: Props) => {
-  // @ts-ignore
-  const { upsertCartItem, removeCartItem } = useCartStore(state => state)
+  const { upsertCartItem } = useCartStore(state => state)
 
   const handlePlusButton = () => {
     upsertCartItem({
@@ -21,16 +20,12 @@ export const CartItemQuantity = ({ cartItem }: Props) => {
   }
 
   const handleMinusButton = () => {
-    if (cartItem.quantity === 1) {
-      removeCartItem(cartItem)
-    } else {
-      upsertCartItem({
-        product: cartItem.product,
-        quantity: -1,
-        selectedMaterialIndex: cartItem.selectedMaterialIndex,
-        price: cartItem.price
-      })
-    }
+    upsertCartItem({
+      product: cartItem.product,
+      quantity: -1,
+      selectedMaterialIndex: cartItem.selectedMaterialIndex,
+      price: cartItem.price
+    })
   }
 
   return (
@@ -43,7 +38,7 @@ export const CartItemQuantity = ({ cartItem }: Props) => {
       >
         <MinusIcon />
       </Button>
-      <div className="border p-2">{cartItem.quantity}</div>
+      <div className="border min-w-8 p-2">{cartItem.quantity}</div>
       <Button
         onClick={handlePlusButton}
         variant="ghost"

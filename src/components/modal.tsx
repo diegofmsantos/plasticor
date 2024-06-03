@@ -49,6 +49,7 @@ export const Modal = ({ item, image }: Props) => {
         toast({ title: 'Adicionado ao carrinho!' })
 
         setQuantity(0)
+        setSelectedMaterialIndex(null)
     }
 
     return (
@@ -58,15 +59,15 @@ export const Modal = ({ item, image }: Props) => {
                     Comprar
                 </Button>
             </DialogTrigger>
-            <DialogContent className="h-[720px] flex flex-col justify-around items-center">
+            <DialogContent className="h-[650px] py-4 flex flex-col justify-around items-center">
                 <DialogHeader>
                     <DialogTitle className="text-center mb-2 text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
-                    <Carousel className="w-[250px] h-[290px] flex m-auto">
+                    <Carousel className="w-[220px]  flex ">
                         <CarouselContent>
                             {image.map((image, index) => (
-                                <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-72">
-                                    <div className="w-52">
-                                        <Image src={image} width={130} height={130} alt="Image" className="w-52 h-64" />
+                                <CarouselItem key={index} className="w-40 h-[275px] p-0 flex flex-col justify-center items-center sm:w-48 sm:h-60 md:w-40 md:h-64">
+                                    <div className="w-44 h-56">
+                                        <Image src={image} width={130} height={130} alt="Image" className="w-full h-full" />
                                     </div>
                                     <div className="font-bold text-lg h-8 my-2 text-gray-500">{selectedMaterialIndex !== null ? `R$ ${item.valores[selectedMaterialIndex]?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : ''}</div>
                                 </CarouselItem>
@@ -98,7 +99,7 @@ export const Modal = ({ item, image }: Props) => {
                     <div className="text-center font-bold mb-4">CAIXAS</div>
                     <input
                         type="number"
-                        className="border border-gray-400 p-1 outline-none flex justify-center items-center"
+                        className="border border-gray-400 w-48 p-1 outline-none pl-20 font-bold"
                         value={quantity <= 0 ? '' : quantity}
                         onChange={(e) => setQuantity(+e.target.value)}
                     />

@@ -12,7 +12,7 @@ import { CartItem } from "@/types/Cart"
 
 export const CartSidebar = () => {
     const [checkoutOpen, setCheckoutOpen] = useState(false);
-    const { cart, subtotal, desconto, totalFinal, setDesconto } = useCartStore(state => state)
+    const { cart, subtotal, desconto, totalFinal, setDesconto, totalItems } = useCartStore(state => state)
 
     const descontoValue = parseFloat(desconto.toString()) || 0
     const descontoReais = subtotal * (descontoValue / 100)
@@ -24,13 +24,13 @@ export const CartSidebar = () => {
                     <span className="font-bold mr-2">Carrinho</span>
                     <ShoppingCartIcon />
                     {cart.length > 0 &&
-                        <div className="absolute w-5 h-5 text-white bg-green-400 rounded-full -right-1 -top-1">
+                        <div className="absolute w-7 h-6 flex justify-center items-center  text-white bg-green-400 rounded-full -right-2 -top-2">
                             {cart.length}
                         </div>
                     }
                 </Button>
             </SheetTrigger>
-            <SheetContent className="">
+            <SheetContent className="overflow-x-auto">
                 <SheetHeader className="mb-2">
                     <SheetTitle>Carrinho</SheetTitle>
                 </SheetHeader>
@@ -44,6 +44,7 @@ export const CartSidebar = () => {
                     ))}
                 </div>
                 <Separator className="my-4" />
+                <div className="text-right">Caixas: {totalItems}</div>
                 <div className="flex flex-col justify-center items-center mt-16 gap-16">
                     <div className="flex flex-col items-center text-xs font-bold text-black">
                         <div className="mb-2 text-lg">SUBTOTAL</div>
@@ -72,11 +73,11 @@ export const CartSidebar = () => {
                     </div>
                 </div>
                 <Separator className="mt-16" />
-                <div className="text-center fixed bottom-5 right-28">
+                <div className="text-center">
                     <Button
                         onClick={() => setCheckoutOpen(true)}
                         disabled={cart.length === 0}
-                        className="bg-gray-400 w-40 h-12 text-md hover:bg-green-600"
+                        className="bg-gray-400 w-40 h-12 mt-4 text-md hover:bg-green-600"
                     >
                         Finalizar Compra
                     </Button>

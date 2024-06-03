@@ -3,7 +3,7 @@ import { useCartStore } from '@/stores/cart-store'
 
 export const generateMessage = () => {
     const { nome, cnpj, endereco, email, telefone, pagamento, frete } = useCheckoutStore.getState()
-    const { cart, subtotal, desconto, totalFinal } = useCartStore.getState()
+    const { cart, subtotal, desconto, totalFinal, totalItems } = useCartStore.getState()
 
     let pedidos = []
     for (let item of cart) {
@@ -14,21 +14,21 @@ export const generateMessage = () => {
     const totalFinalFormatado = totalFinal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
     return `
-   *DADOS DO CLIENTE:*
+*DADOS DO CLIENTE:*
    
 *CLIENTE:* ${nome}
 
 *CNPJ/CPF:* ${cnpj}
 
-*Endereço:* ${endereco}
+*CEP:* ${endereco}
 
 *E-MAIL:* ${email}
 
 *TELEFONE:* ${telefone}
 
-*Forma de Pagamento:* ${pagamento}
+*FORMA DE PAGAMENTO:* ${pagamento}
 
-*Frete:* ${frete}
+*FRETE* ${frete}
 
 --------------------------------------
 
@@ -36,12 +36,12 @@ export const generateMessage = () => {
 
 ${pedidos.join("\n")}
 
-*Caixas:* Total de caixas
+*CAIXAS:* ${totalItems}
 
-*Subtotal:* R$ ${subtotalFormatado}
+*SUBTOTAL:* R$ ${subtotalFormatado}
 
-*Desconto:* - R$ ${descontoReais}
+*DESCONTO:* ${desconto}% (-R$${descontoReais})
 
-*Total:* R$ ${totalFinalFormatado}
-  `
+*TOTAL:* R$ ${totalFinalFormatado}
+`
 }
