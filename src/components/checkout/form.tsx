@@ -95,31 +95,31 @@ export const FormClient = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4 overflow-y-auto p-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4 overflow-y-auto px-2">
                 <FormField control={form.control} name="cliente" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>CLIENTE:</FormLabel>
+                        <FormLabel className='text-md text-black'>CLIENTE:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} autoFocus /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="cnpj" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>CNPJ/CPF:</FormLabel>
+                        <FormLabel className='text-md text-black'>CNPJ/CPF:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="cep" render={({ field }) => (
                     <FormItem className='w-32'>
-                        <FormLabel className='text-lg text-black'>CEP:</FormLabel>
+                        <FormLabel className='text-md text-black'>CEP:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="rua" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>RUA:</FormLabel>
+                        <FormLabel className='text-md text-black'>RUA:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
@@ -127,28 +127,28 @@ export const FormClient = () => {
                 <div className='flex flex-wrap gap-2 justify-between'>
                     <FormField control={form.control} name="numero" render={({ field }) => (
                         <FormItem className='w-40'>
-                            <FormLabel className='text-lg text-black'>NÚMERO:</FormLabel>
+                            <FormLabel className='text-md text-black'>NÚMERO:</FormLabel>
                             <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                             <FormMessage />
                         </FormItem>)}
                     />
                     <FormField control={form.control} name="complemento" render={({ field }) => (
                         <FormItem className='w-40'>
-                            <FormLabel className='text-lg text-black'>COMPLEMENTO:</FormLabel>
+                            <FormLabel className='text-md text-black'>COMPLEMENTO:</FormLabel>
                             <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                             <FormMessage />
                         </FormItem>)}
                     />
                     <FormField control={form.control} name="bairro" render={({ field }) => (
                         <FormItem className='w-52 mt-1'>
-                            <FormLabel className='text-lg text-black'>BAIRRO:</FormLabel>
+                            <FormLabel className='text-md text-black'>BAIRRO:</FormLabel>
                             <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                             <FormMessage />
                         </FormItem>)}
                     />
                     <FormField control={form.control} name="cidade" render={({ field }) => (
                         <FormItem className='w-52 mt-1'>
-                            <FormLabel className='text-lg text-black'>CIDADE:</FormLabel>
+                            <FormLabel className='text-md text-black'>CIDADE:</FormLabel>
                             <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                             <FormMessage />
                         </FormItem>)}
@@ -156,21 +156,21 @@ export const FormClient = () => {
                 </div>
                 <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>E-MAIL:</FormLabel>
+                        <FormLabel className='text-md text-black'>E-MAIL:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="telefone" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>TELEFONE:</FormLabel>
+                        <FormLabel className='text-md text-black'>TELEFONE:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="frete" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>FRETE:</FormLabel>
+                        <FormLabel className='text-md text-black'>FRETE:</FormLabel>
                         <FormControl className='text-gray-500'>
                             <Select onValueChange={(value) => {
                                 field.onChange(value);
