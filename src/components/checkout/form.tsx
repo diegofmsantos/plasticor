@@ -95,7 +95,7 @@ export const FormClient = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4 overflow-y-auto px-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-full gap-4 overflow-y-auto px-2">
                 <FormField control={form.control} name="cliente" render={({ field }) => (
                     <FormItem>
                         <FormLabel className='text-md text-black'>CLIENTE:</FormLabel>
