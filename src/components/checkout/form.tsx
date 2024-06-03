@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -6,57 +7,87 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { generateMessage } from '@/lib/generate-message'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 const formSchema = z.object({
-    nome: z.string({
+    cliente: z.string({
         required_error: "Preencha o nome."
     }).min(2, "Preencha o nome."),
     cnpj: z.string({
-        required_error: "Preencha o CNPJ."
+        required_error: "Preencha o CNPJ/CPF."
     }).min(11, "CNPJ/CPF deve ter no mínimo 11 caracteres."),
-    endereco: z.string({
-        required_error: "Preencha o endereço."
-    }).min(5, "Endereço deve ter no mínimo 5 caracteres."),
+    cep: z.string({
+        required_error: "Preencha o cep."
+    }).min(8, "Cep deve ter no mínimo 8 caracteres."),
+    rua: z.string({
+        required_error: "Preencha a rua."
+    }).min(5, "Rua deve ter no mínimo 5 caracteres."),
+    numero: z.string({
+        required_error: "Preencha o número."
+    }).min(1, "Número deve ter no mínimo 1 caracter."),
+    complemento: z.string({
+        required_error: "Preencha o complemento."
+    }).min(3, "Complemento deve ter no mínimo 3 caracteres.").optional(),
+    bairro: z.string({
+        required_error: "Preencha o bairro."
+    }).min(5, "Bairro deve ter no mínimo 5 caracteres."),
+    cidade: z.string({
+        required_error: "Preencha a cidade."
+    }).min(5, "Cidade deve ter no mínimo 8 caracteres."),
     email: z.string({
         required_error: "Preencha o email"
     }).email({ message: "E-mail inválido." }),
     telefone: z.string({
         required_error: "Preencha o telefone."
     }).min(8, "Mínimo de 8 dígitos."),
+    transportadora: z.string().optional(),
+    frete: z.string({
+        required_error: "Escolha uma das opções."
+    }),
     pagamento: z.string({
         required_error: "Preencha a forma de pagamento."
     }).min(2, "Forma de pagamento deve ter no mínimo 2 caracteres."),
-    frete: z.string({
-        required_error: "Preencha o frete."
-    }).min(2, "Frete deve ter no mínimo 2 caracteres."),
 })
 
 export const FormClient = () => {
-    const { nome, setNome, cnpj, setCnpj, endereco, setEndereco, email, setEmail, telefone, setTelefone, pagamento, setPagamento, frete, setFrete } = useCheckoutStore(state => state)
+    const { cliente, setCliente, cnpj, setCnpj, cep, setCep, rua, setRua, numero, setNumero, complemento, setComplemento, bairro, setBairro, cidade, setCidade, email, setEmail, telefone, setTelefone, frete, setFrete, transportadora, setTransportadora, pagamento, setPagamento } = useCheckoutStore(state => state)
+    const [freteSelected, setFreteSelected] = useState(frete)
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            nome: nome,
+            cliente: cliente,
             cnpj: cnpj,
-            endereco: endereco,
+            cep: cep,
+            rua: rua,
+            numero: numero,
+            complemento: complemento,
+            bairro: bairro,
+            cidade: cidade,
             email: email,
             telefone: telefone,
-            pagamento: pagamento,
-            frete: frete
+            frete: frete,
+            transportadora: transportadora,
+            pagamento: pagamento
         }
     })
 
     const onSubmit = (values: z.infer<typeof formSchema>) => {
-        setNome(values.nome)
+        setCliente(values.cliente)
         setCnpj(values.cnpj)
-        setEndereco(values.endereco)
+        setCep(values.cep)
+        setRua(values.rua)
+        setNumero(values.numero)
+        setComplemento(values.complemento)
+        setBairro(values.bairro)
+        setCidade(values.cidade)
         setEmail(values.email)
         setTelefone(values.telefone)
-        setPagamento(values.pagamento)
         setFrete(values.frete)
+        setTransportadora(values.transportadora)
+        setPagamento(values.pagamento)
 
-        const message = generateMessage()
+        const message = generateMessage();
         const linkWhats = `https://wa.me//${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`
 
         window.open(linkWhats, '_blank')
@@ -64,10 +95,10 @@ export const FormClient = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4">
-                <FormField control={form.control} name="nome" render={({ field }) => (
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-screen gap-4 overflow-y-auto p-2">
+                <FormField control={form.control} name="cliente" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>Cliente:</FormLabel>
+                        <FormLabel className='text-lg text-black'>CLIENTE:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} autoFocus /></FormControl>
                         <FormMessage />
                     </FormItem>)}
@@ -79,59 +110,106 @@ export const FormClient = () => {
                         <FormMessage />
                     </FormItem>)}
                 />
+                <FormField control={form.control} name="cep" render={({ field }) => (
+                    <FormItem className='w-32'>
+                        <FormLabel className='text-lg text-black'>CEP:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormMessage />
+                    </FormItem>)}
+                />
+                <FormField control={form.control} name="rua" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className='text-lg text-black'>RUA:</FormLabel>
+                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormMessage />
+                    </FormItem>)}
+                />
+                <div className='flex flex-wrap gap-2 justify-between'>
+                    <FormField control={form.control} name="numero" render={({ field }) => (
+                        <FormItem className='w-40'>
+                            <FormLabel className='text-lg text-black'>NÚMERO:</FormLabel>
+                            <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
+                    <FormField control={form.control} name="complemento" render={({ field }) => (
+                        <FormItem className='w-40'>
+                            <FormLabel className='text-lg text-black'>COMPLEMENTO:</FormLabel>
+                            <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
+                    <FormField control={form.control} name="bairro" render={({ field }) => (
+                        <FormItem className='w-52 mt-1'>
+                            <FormLabel className='text-lg text-black'>BAIRRO:</FormLabel>
+                            <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
+                    <FormField control={form.control} name="cidade" render={({ field }) => (
+                        <FormItem className='w-52 mt-1'>
+                            <FormLabel className='text-lg text-black'>CIDADE:</FormLabel>
+                            <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
+                </div>
                 <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>E-mail:</FormLabel>
-                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
-                        <FormMessage />
-                    </FormItem>)}
-                />
-                <FormField control={form.control} name="endereco" render={({ field }) => (
-                    <FormItem>
-                        <FormLabel className='text-lg text-black'>Endereço:</FormLabel>
-                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
-                        <FormMessage />
-                    </FormItem>)}
-                />
-                <FormField control={form.control} name="cep" render={({ field }) => (
-                    <FormItem>
-                        <FormLabel className='text-lg text-black'>CEP:</FormLabel>
+                        <FormLabel className='text-lg text-black'>E-MAIL:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="telefone" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>Telefone:</FormLabel>
+                        <FormLabel className='text-lg text-black'>TELEFONE:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
                 <FormField control={form.control} name="frete" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>Frete:</FormLabel>
-                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                        <FormLabel className='text-lg text-black'>FRETE:</FormLabel>
+                        <FormControl className='text-gray-500'>
+                            <Select onValueChange={(value) => {
+                                field.onChange(value);
+                                setFreteSelected(value);
+                            }} defaultValue={field.value}>
+                                <SelectTrigger className="w-[220px]">
+                                    <SelectValue placeholder="Selecione uma opção" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectGroup>
+                                        <SelectItem value="CIF">CIF</SelectItem>
+                                        <SelectItem value="FOB">FOB</SelectItem>
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
+                        </FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
-                <FormField control={form.control} name="transportadora" render={({ field }) => (
-                    <FormItem>
-                        <FormLabel className='text-lg text-black'>Transportadora:</FormLabel>
-                        <FormControl className='text-gray-500'><Input {...field} /></FormControl>
-                        <FormMessage />
-                    </FormItem>)}
-                />
+                {freteSelected === 'fob' && (
+                    <FormField control={form.control} name="transportadora" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel className='text-lg text-black'>TRANSPORTADORA:</FormLabel>
+                            <FormControl className='text-gray-500'><Input {...field} /></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
+                )}
                 <FormField control={form.control} name="pagamento" render={({ field }) => (
                     <FormItem>
-                        <FormLabel className='text-lg text-black'>Condições de pagamento:</FormLabel>
+                        <FormLabel className='text-lg text-black'>CONDIÇÃO DE PAGAMENTO:</FormLabel>
                         <FormControl className='text-gray-500'><Input {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>)}
                 />
-                <Button type="submit" className='w-40 m-auto'>
+                <Button type="submit" className='w-40 m-auto mb-8'>
                     Finalizar
                 </Button>
             </form>
         </Form>
-    )
-}
+    );
+};

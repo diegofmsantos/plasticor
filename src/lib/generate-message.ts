@@ -2,7 +2,7 @@ import { useCheckoutStore } from '@/stores/checkout-store'
 import { useCartStore } from '@/stores/cart-store'
 
 export const generateMessage = () => {
-    const { nome, cnpj, endereco, email, telefone, pagamento, frete } = useCheckoutStore.getState()
+    const { cliente, cnpj, cep, rua, numero, complemento, bairro, cidade, email, telefone, frete, transportadora, pagamento } = useCheckoutStore.getState()
     const { cart, subtotal, desconto, totalFinal, totalItems } = useCartStore.getState()
 
     let pedidos = []
@@ -16,19 +16,31 @@ export const generateMessage = () => {
     return `
 *DADOS DO CLIENTE:*
    
-*CLIENTE:* ${nome}
+*CLIENTE:* ${cliente}
 
 *CNPJ/CPF:* ${cnpj}
 
-*CEP:* ${endereco}
+*CEP:* ${cep}
+
+*RUA:* ${rua}
+
+*Nº:* ${numero}
+
+*COMPLEMENTO:* ${complemento}
+
+*BAIRRO:* ${bairro}
+
+*CIDADE:* ${cidade}
 
 *E-MAIL:* ${email}
 
 *TELEFONE:* ${telefone}
 
-*FORMA DE PAGAMENTO:* ${pagamento}
+*FRETE:* ${frete}
 
-*FRETE* ${frete}
+*TRANSPORTADORA:* ${transportadora}
+
+*FORMA DE PAGAMENTO:* ${pagamento}
 
 --------------------------------------
 
