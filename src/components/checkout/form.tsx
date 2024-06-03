@@ -95,7 +95,7 @@ export const FormClient = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-full gap-4 overflow-y-auto px-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
                 <FormField control={form.control} name="cliente" render={({ field }) => (
                     <FormItem>
                         <FormLabel className='text-md text-black'>CLIENTE:</FormLabel>
@@ -206,7 +206,7 @@ export const FormClient = () => {
                         <FormMessage />
                     </FormItem>)}
                 />
-                <Button type="submit" className='w-40 m-auto mb-8'>
+                <Button type="submit" className='w-40 m-auto my-3'>
                     Finalizar
                 </Button>
             </form>

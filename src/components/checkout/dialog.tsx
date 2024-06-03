@@ -11,11 +11,11 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent>
+            <DialogContent className="flex flex-col h-full overflow-y-auto px-4">
                 <DialogHeader>
-                    <DialogTitle className="text-xl font-bold">Dados do Cliente</DialogTitle>
+                    <DialogTitle className="h-10 text-xl font-bold text-center mb-2">DADOS DO CLIENTE</DialogTitle>
                 </DialogHeader>
-                <div className="flex flex-col gap-3">
+                <div className="flex-1">
                     <FormClient />
                 </div>
             </DialogContent>
