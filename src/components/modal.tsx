@@ -73,8 +73,6 @@ export const Modal = ({ item, image }: Props) => {
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        <CarouselPrevious className="border border-gray-500 " />
-                        <CarouselNext className="border border-gray-500 " />
                     </Carousel>
                     
                 </DialogHeader>
