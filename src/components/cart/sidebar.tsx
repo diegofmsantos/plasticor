@@ -20,8 +20,7 @@ export const CartSidebar = () => {
     return (
         <Sheet>
             <SheetTrigger asChild className="p-0">
-                <Button className="relative text-white bg-red-600 w-32 h-8">
-                    <span className="font-bold mr-2">Carrinho</span>
+                <Button className="relative text-white bg-red-600 w-16 h-8">
                     <ShoppingCartIcon />
                     {cart.length > 0 &&
                         <div className="absolute w-7 h-6 flex justify-center items-center  text-white bg-green-400 rounded-full -right-2 -top-2">
@@ -59,7 +58,7 @@ export const CartSidebar = () => {
                             onChange={e => setDesconto(+e.target.value)}
                             type="number"
                             className="w-40 pl-16 h-10 text-xl ] outline-none border border-gray-300 text-gray-500" />
-                        <div className="text-xl text-green-500 w-40 h-7 flex justify-center items-center">
+                        <div className="text-xl text-green-500 w-44 h-7 flex justify-center items-center">
                             {descontoReais > 0 &&
                                 <div>- R$ {descontoReais.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                             }

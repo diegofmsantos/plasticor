@@ -91,6 +91,8 @@ export const FormClient = () => {
         const linkWhats = `https://wa.me//${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`
 
         window.open(linkWhats, '_blank')
+
+        window.location.reload();
     }
 
     return (

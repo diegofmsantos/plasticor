@@ -87,7 +87,7 @@ export const Modal = ({ item, image }: Props) => {
                                 <Button
                                     key={index}
                                     onClick={() => handleClickMaterial(index)}
-                                    className={`border w-28 border-gray-400 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
+                                    className={`border w-32 border-gray-400 text-center font-bold bg-white text-[#002372] hover:bg-[#002372] hover:text-white  ${isSelected ? 'bg-[#002372] text-white' : 'bg-white text-[#002372]'}`}
                                 >
                                     {material}
                                 </Button>

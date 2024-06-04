@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { ThemeToggle } from "./theme-toggle"
 import { CartSidebar } from "./cart/sidebar"
 
 export const Header = () => {
