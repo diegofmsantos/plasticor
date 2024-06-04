@@ -5,7 +5,7 @@ export const Header = () => {
 
     return (
         <header
-            className="fixed z-10 w-full flex justify-between h-28 items-center py-3 px-8 bg-[#002372]">
+            className="fixed z-10 w-full flex justify-between h-32 items-center py-3 px-8 bg-[#002372]">
             <div className="w-36 h-16">
                 <Image src="/assets/logo.png" width={150} height={80} alt="Logo" className="w-full h-full" priority />
             </div>

@@ -23,14 +23,14 @@ export const NotebookTabs = async () => {
 
     return (
         <Tabs defaultValue="masculino">
-            <TabsList className="flex gap-3 w-full fixed z-50 pr-5">
+            <TabsList className="mt-4 flex gap-3 w-full fixed z-50 pr-5">
                 {tabs.map(item => (
-                    <TabsTrigger key={item.value} value={item.value} className="flex-1 font-bold">
+                    <TabsTrigger key={item.value} value={item.value} className="flex-1 font-bold rounded-xl">
                         {item.title}
                     </TabsTrigger>
                 ))}
             </TabsList>
-            <div className="my-8 pt-12">
+            <div className="my-8 pt-28">
                 {tabs.map(item => (
                     <TabsContent key={item.value} value={item.value}>
                         {item.products.length > 0 &&

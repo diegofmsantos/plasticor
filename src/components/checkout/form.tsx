@@ -25,9 +25,7 @@ const formSchema = z.object({
     numero: z.string({
         required_error: "Preencha o número."
     }).min(1, "Número deve ter no mínimo 1 caracter."),
-    complemento: z.string({
-        required_error: "Preencha o complemento."
-    }).min(3, "Complemento deve ter no mínimo 3 caracteres.").optional(),
+    complemento: z.string().optional(),
     bairro: z.string({
         required_error: "Preencha o bairro."
     }).min(5, "Bairro deve ter no mínimo 5 caracteres."),

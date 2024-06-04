@@ -59,7 +59,7 @@ export const Modal = ({ item, image }: Props) => {
                     Comprar
                 </Button>
             </DialogTrigger>
-            <DialogContent className="h-[650px] py-4 flex flex-col justify-around items-center">
+            <DialogContent className="h-[700px] py-4 flex flex-col justify-around items-center">
                 <DialogHeader>
                     <DialogTitle className="text-center mb-2 text-2xl font-bold text-[#002372]">{item.linha}</DialogTitle>
                     <Carousel className="w-[220px]  flex ">

@@ -1,17 +1,33 @@
 import { CartItem } from "@/types/Cart"
 import { CartItemQuantity } from "./item-quantity"
+import { Button } from "../ui/button"
+import { useCartStore } from "@/stores/cart-store"
+import { Trash } from "lucide-react"
 
 type ItemCartProps = {
     item: CartItem
 }
 
 export const ItemCart = ({ item }: ItemCartProps) => {
+
+    const { removeFromCart } = useCartStore(state => state)
+
+    const handleDelete = () => {
+        removeFromCart(item)
+      }
     return (
-        <div className="flex justify-between items-center">
-            <div className="flex gap-2">
+        <div className="flex justify-between items-center gap-2">
+            <div className="flex items-center gap-2">
+                <Button
+                    variant="ghost"
+                    onClick={handleDelete}
+                    size="icon"
+                    className="size-6  hover:bg-red-500">
+                    <Trash className="w-5 h-5 text-red-600 hover:text-white" />
+                </Button>
                 <div className="w-10">
                     <img
-                    // @ts-ignore
+                        // @ts-ignore
                         src={`/assets/linhas/${item.product.linha}/${item.product.url[item.selectedMaterialIndex]}`}
                         alt="foto"
                     />
