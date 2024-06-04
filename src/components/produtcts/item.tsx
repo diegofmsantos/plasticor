@@ -10,7 +10,7 @@ export const ProductItem = ({ item }: Props) => {
     return (
         <div>
             <div className="flex flex-col justify-center items-center gap-1 w-72">
-                <Carousel className="w-64 h-[290px] flex flex-col justify-center items-center">
+                <Carousel className="w-64 h-[290px] mb-2 flex flex-col justify-center items-center">
                     <div className="text-center text-lg font-bold text-bg-[#002372]">{item.linha}
                     </div>
                     <CarouselContent className="w-[300px]">
@@ -35,7 +35,6 @@ export const ProductItem = ({ item }: Props) => {
                             </div>
                         </CarouselItem>
                     </CarouselContent>
-                    
                 </Carousel>
                 <Modal item={item} image={item.url.map(url => `/assets/linhas/${item.linha}/${url}`)} />
             </div>

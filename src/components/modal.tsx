@@ -103,7 +103,7 @@ export const Modal = ({ item, image }: Props) => {
                     />
                     
                 </div>
-                <Button onClick={handleAddButton} className="bg-green-500 w-40">Adicionar</Button>
+                <Button onClick={handleAddButton} className="bg-green-500 w-40 font-bold">Adicionar</Button>
             </DialogContent>
         </Dialog>
     )

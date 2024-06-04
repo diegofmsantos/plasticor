@@ -76,7 +76,7 @@ export const CartSidebar = () => {
                     <Button
                         onClick={() => setCheckoutOpen(true)}
                         disabled={cart.length === 0}
-                        className="bg-gray-400 w-40 h-12 mt-4 text-md hover:bg-green-600"
+                        className="bg-gray-400 w-40 h-12 mt-4 text-md font-bold hover:bg-green-600"
                     >
                         Finalizar Compra
                     </Button>
