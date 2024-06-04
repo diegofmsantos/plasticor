@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { useCartStore } from "@/stores/cart-store"
 import { CartItem } from "@/types/Cart"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { MinusIcon, PlusIcon, Trash } from "lucide-react"
 
 type Props = {
   cartItem: CartItem
 }
 
 export const CartItemQuantity = ({ cartItem }: Props) => {
-  const { upsertCartItem } = useCartStore(state => state)
+  const { upsertCartItem, removeFromCart } = useCartStore(state => state)
 
   const handlePlusButton = () => {
     upsertCartItem({
@@ -28,8 +28,19 @@ export const CartItemQuantity = ({ cartItem }: Props) => {
     })
   }
 
+  const handleDelete = () => {
+    removeFromCart(cartItem)
+  }
+
   return (
     <div className="flex items-center gap-2">
+      <Button
+        variant="ghost"
+        onClick={handleDelete}
+        size="icon"
+        className="size-6  hover:bg-red-500">
+        <Trash className="w-5 h-5 text-red-600 hover:text-white" />
+      </Button>
       <Button
         onClick={handleMinusButton}
         variant="ghost"
