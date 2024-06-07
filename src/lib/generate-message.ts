@@ -15,7 +15,7 @@ export const generateMessage = () => {
 
     return `
 *DADOS DO CLIENTE:*
-   
+
 *CLIENTE:* ${cliente}
 
 *CNPJ/CPF:* ${cnpj}

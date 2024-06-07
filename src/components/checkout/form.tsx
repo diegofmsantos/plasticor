@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useCheckoutStore } from '@/stores/checkout-store'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { generateMessage } from '@/lib/generate-message'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useCheckoutStore } from '@/stores/checkout-store';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { generateMessage } from '@/lib/generate-message';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { pdf } from '@react-pdf/renderer'; // Importe pdf corretamente
+import { saveAs } from 'file-saver'; // Importe saveAs corretamente
+import PdfDocument from '@/components/pdfDocument'; // Certifique-se de que o caminho está correto
+
 
 const formSchema = z.object({
     cliente: z.string({
@@ -70,7 +74,7 @@ export const FormClient = () => {
         }
     })
 
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
         setCliente(values.cliente)
         setCnpj(values.cnpj)
         setCep(values.cep)
@@ -85,12 +89,17 @@ export const FormClient = () => {
         setTransportadora(values.transportadora)
         setPagamento(values.pagamento)
 
-        const message = generateMessage();
-        const linkWhats = `https://wa.me//${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`
+        // Gerar o PDF
+        const blob = await pdf(<PdfDocument />).toBlob();
 
-        window.open(linkWhats, '_blank')
+    // Salvar o PDF localmente
+    saveAs(blob, 'pedido.pdf');
 
-        window.location.reload();
+    // Abra o WhatsApp com a mensagem formatada
+    const message = generateMessage();
+    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
+
+    window.location.reload();
     }
 
     return (
