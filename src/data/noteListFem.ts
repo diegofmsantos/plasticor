@@ -92,10 +92,10 @@ export const NoteListFem: Notebook[] = [
     {
         id: 12,
         codigos: [4154, 4150, 4151, 4152, 4153],
-        linha: 'UNICORN-WORLD',
+        linha: 'UNICORN WORLD',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['UNICORN-WORLD-1.png', 'UNICORN-WORLD-2.png', 'UNICORN-WORLD-3.png', 'UNICORN-WORLD-4.png', 'UNICORN-WORLD-5.png']
+        url: ['UNICORN WORLD-1.png', 'UNICORN WORLD-2.png', 'UNICORN WORLD-3.png', 'UNICORN WORLD-4.png', 'UNICORN WORLD-5.png']
     },
     {
         id: 13,

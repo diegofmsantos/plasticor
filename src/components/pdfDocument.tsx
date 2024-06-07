@@ -5,6 +5,7 @@ import { useCartStore } from '@/stores/cart-store';
 import { styles } from '@/lib/styles';
 
 const PdfDocument = () => {
+
   const [checkoutState, setCheckoutState] = useState(useCheckoutStore.getState());
   const [cartState, setCartState] = useState(useCartStore.getState());
 
@@ -25,11 +26,19 @@ const PdfDocument = () => {
 
   let pedidos = [];
   for (let item of cart) {
-    pedidos.push(`${item.quantity} x ${item.product.linha} (${item.product.materias[item.selectedMaterialIndex]}): R$ ${(item.quantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
+    pedidos.push(`[${item.product.codigos[item.selectedMaterialIndex]}] ${item.quantity} x ${item.product.linha} (${item.product.materias[item.selectedMaterialIndex]}): R$ ${(item.quantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
   }
   const subtotalFormatado = subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const descontoReais = (subtotal * (desconto / 100)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const totalFinalFormatado = totalFinal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  // Obtém a data atual
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
 
   return (
     <Document>
@@ -37,11 +46,14 @@ const PdfDocument = () => {
         <View style={styles.header}>
           <Image src="/assets/logo.png" style={styles.logo} />
           <View style={styles.companyInfo}>
-            <Text>PLASTICOR BRINDES INDÚSTRIA E COMÉRCIO LTDA</Text>
-            <Text>RUA ARTUR AZEVEDO, 79</Text>
-            <Text>ENCRUZILHADA - CEP 52021190 - RECIFE-PE</Text>
+            <Text style={styles.bold}>PLASTICOR BRINDES INDÚSTRIA E COMÉRCIO LTDA</Text>
+            <Text style={styles.bold}>RUA ARTUR AZEVEDO, 79</Text>
+            <Text style={styles.bold}>ENCRUZILHADA - CEP 52021190 - RECIFE-PE</Text>
             <Text>Fone: (81)3241-2410 / 3241-6276 - Fax: (81)3241-2410</Text>
-            <Text>CNPJ/CPF: 097.573.189/0001-86 - Inscr. Estadual: 011226-45</Text>
+            <Text style={styles.bold}>CNPJ/CPF: 097.573.189/0001-86 - Inscr. Estadual: 011226-45</Text>
+          </View>
+          <View>
+            <Text style={styles.emissao}>Data de Emissão: {formattedDate}</Text>
           </View>
         </View>
         <View style={styles.section}>

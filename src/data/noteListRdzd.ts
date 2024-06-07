@@ -139,7 +139,7 @@ export const NoteListRdzd: Notebook[] = [
         linha: 'VELOZES E TUNADOS - Red',
         materias: ['10 matérias', '15 matérias', '20 matérias'],
         valores: [434.40, 482.88, 449.82],
-        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png', 'VELOZES-E-TUNADOS-5.png']
+        url: ['VELOZES E TUNADOS-1.png', 'VELOZES E TUNADOS-2.png', 'VELOZES E TUNADOS-3.png', 'VELOZES E TUNADOS-4.png', 'VELOZES E TUNADOS-5.png']
     },
     {
         id: 15,

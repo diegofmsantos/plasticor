@@ -20,10 +20,10 @@ export const NoteListInfantil: Notebook[] = [
     {
         id: 3,
         codigos: [4274, 4275, 4276, 4277, 4278],
-        linha: 'UNICORN-WORLD',
+        linha: 'UNICORN WORLD',
         materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
         valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['UNICORN-WORLD-1.png', 'UNICORN-WORLD-2.png', 'UNICORN-WORLD-3.png', 'UNICORN-WORLD-4.png', 'UNICORN-WORLD-5.png']
+        url: ['UNICORN WORLD-1.png', 'UNICORN WORLD-2.png', 'UNICORN WORLD-3.png', 'UNICORN WORLD-4.png', 'UNICORN WORLD-5.png']
     },
     {
         id: 4,
@@ -76,10 +76,10 @@ export const NoteListInfantil: Notebook[] = [
     {
         id: 10,
         codigos: [4298],
-        linha: 'SPORT-MIX - 180 folhas',
+        linha: 'SPORT MIX - 180 folhas',
         materias: ['1/4 c/ 180 folhas'],
         valores: [557.40],
-        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png']
+        url: ['SPORT MIX-1.png', 'SPORT MIX-2.png', 'SPORT MIX-3.png', 'SPORT MIX-4.png']
     },
     {
         id: 11,
@@ -87,7 +87,7 @@ export const NoteListInfantil: Notebook[] = [
         linha: 'VELOZES E TUNADOS - 180 folhas',
         materias: ['1/4 c/ 180 folhas'],
         valores: [557.40],
-        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png']
+        url: ['VELOZES E TUNADOS-1.png', 'VELOZES E TUNADOS-2.png', 'VELOZES E TUNADOS-3.png', 'VELOZES E TUNADOS-4.png']
     },
 
 ]

@@ -96,10 +96,12 @@ export const FormClient = () => {
     saveAs(blob, 'pedido.pdf');
 
     // Abra o WhatsApp com a mensagem formatada
-    const message = generateMessage();
-    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
+    setTimeout(() => {
+        const message = generateMessage();
+        window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
+      }, 500);
 
-    window.location.reload();
+      window.location.reload();
     }
 
     return (

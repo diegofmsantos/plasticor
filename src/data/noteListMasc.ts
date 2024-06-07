@@ -20,26 +20,26 @@ export const NoteListMasc: Notebook[] = [
     {
         id: 3,
         codigos: [4189, 4185, 4186, 4187, 4188],
-        linha: 'EPIC-GAMES',
+        linha: 'EPIC GAMES',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png', 'EPIC-GAMES-5.png']
+        url: ['EPIC GAMES-1.png', 'EPIC GAMES-2.png', 'EPIC GAMES-3.png', 'EPIC GAMES-4.png', 'EPIC GAMES-5.png']
     },
     {
         id: 4,
         codigos: [4184, 4180, 4181, 4182, 4183],
-        linha: 'FIGHT-CLUB',
+        linha: 'FIGHT CLUB',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png', 'FIGHT-CLUB-5.png']
+        url: ['FIGHT CLUB-1.png', 'FIGHT CLUB-2.png', 'FIGHT CLUB-3.png', 'FIGHT CLUB-4.png', 'FIGHT CLUB-5.png']
     },
     {
         id: 5,
-        codigos: [4238, 4235, 4236, 4237],
+        codigos: [4235, 4236, 4237, 4238],
         linha: 'GOL',
-        materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
-        valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['GOL-1.png', 'GOL-2.png', 'GOL-3.png', 'GOL-4.png', 'GOL-5.png']
+        materias: ['15 matérias', '20 matérias'],
+        valores: [660.96, 631.98],
+        url: ['GOL-1.png', 'GOL-2.png', 'GOL-3.png', 'GOL-4.png']
     },
     {
         id: 6,
@@ -108,10 +108,10 @@ export const NoteListMasc: Notebook[] = [
     {
         id: 14,
         codigos: [4224, 4220, 4221, 4222, 4223],
-        linha: 'SPORT-MIX',
+        linha: 'SPORT MIX',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png', 'SPORT-MIX-5.png']
+        url: ['SPORT MIX-1.png', 'SPORT MIX-2.png', 'SPORT MIX-3.png', 'SPORT MIX-4.png', 'SPORT MIX-5.png']
     },
     {
         id: 15,
@@ -119,6 +119,6 @@ export const NoteListMasc: Notebook[] = [
         linha: 'VELOZES E TUNADOS',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['VELOZES-E-TUNADOS-1.png', 'VELOZES-E-TUNADOS-2.png', 'VELOZES-E-TUNADOS-3.png', 'VELOZES-E-TUNADOS-4.png', 'VELOZES-E-TUNADOS-5.png']
+        url: ['VELOZES E TUNADOS-1.png', 'VELOZES E TUNADOS-2.png', 'VELOZES E TUNADOS-3.png', 'VELOZES E TUNADOS-4.png', 'VELOZES E TUNADOS-5.png']
     }
 ];

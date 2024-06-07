@@ -8,19 +8,20 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginBottom: 10,
   },
   logo: {
     width: 150,
-    height: 80,
+    height: 70,
   },
   companyInfo: {
-    fontSize: 10,
+    fontSize: 8,
     textAlign: 'right',
     display: 'flex',
     flexDirection: 'column',
     gap: 5,
+    fontWeight: 'bold'
   },
   section: {
     paddingBottom: 10,
@@ -34,6 +35,8 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 10,
+    fontStyle: 'bold',
+    fontWeight: 'bold'
   },
   bold: {
     fontWeight: 'bold',
@@ -60,4 +63,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 10,
   },
+  emissao: {
+    fontSize: 8
+  }
 });
