@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   logo: {
     width: 150,
@@ -18,21 +18,46 @@ export const styles = StyleSheet.create({
   companyInfo: {
     fontSize: 10,
     textAlign: 'right',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
   },
   section: {
-    marginBottom: 10,
+    paddingBottom: 10,
+    paddingTop: 10,
+    marginBottom: 5,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 10,
+    borderTop: 1,
+    borderBottom: 1
   },
   text: {
-    fontSize: 12,
+    fontSize: 10,
+  },
+  bold: {
+    fontWeight: 'bold',
   },
   itemList: {
+    fontSize: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
     marginTop: 10,
+    marginBottom: 10
   },
   item: {
-    marginBottom: 5,
+    fontSize: 10
   },
   total: {
-    marginTop: 10,
-    fontWeight: 'bold',
+    fontWeight: 'extrabold',
+    fontSize: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
+    borderBottom: 1,
+    borderTop: 1,
+    paddingBottom: 10,
+    paddingTop: 10,
   },
 });

@@ -45,24 +45,24 @@ const PdfDocument = () => {
           </View>
         </View>
         <View style={styles.section}>
-          <Text style={styles.text}>CLIENTE: {cliente}</Text>
-          <Text style={styles.text}>CNPJ/CPF: {cnpj}</Text>
-          <Text style={styles.text}>CEP: {cep}</Text>
-          <Text style={styles.text}>RUA: {rua}, Nº: {numero}</Text>
-          <Text style={styles.text}>COMPLEMENTO: {complemento}</Text>
-          <Text style={styles.text}>BAIRRO: {bairro}</Text>
-          <Text style={styles.text}>CIDADE: {cidade}</Text>
-          <Text style={styles.text}>E-MAIL: {email}</Text>
-          <Text style={styles.text}>TELEFONE: {telefone}</Text>
-          <Text style={styles.text}>FRETE: {frete}</Text>
-          {frete === 'FOB' && <Text style={styles.text}>TRANSPORTADORA: {transportadora}</Text>}
-          <Text style={styles.text}>FORMA DE PAGAMENTO: {pagamento}</Text>
+          <Text style={[styles.text, styles.bold]}>CLIENTE: {cliente}</Text>
+          <Text style={[styles.text, styles.bold]}>CNPJ/CPF: {cnpj}</Text>
+          <Text style={[styles.text, styles.bold]}>CEP: {cep}</Text>
+          <Text style={[styles.text, styles.bold]}>RUA: {rua}, Nº: {numero}</Text>
+          <Text style={[styles.text, styles.bold]}>COMPLEMENTO: {complemento}</Text>
+          <Text style={[styles.text, styles.bold]}>BAIRRO: {bairro}</Text>
+          <Text style={[styles.text, styles.bold]}>CIDADE: {cidade}</Text>
+          <Text style={[styles.text, styles.bold]}>E-MAIL: {email}</Text>
+          <Text style={[styles.text, styles.bold]}>TELEFONE: {telefone}</Text>
+          <Text style={[styles.text, styles.bold]}>FRETE: {frete}</Text>
+          {frete === 'FOB' && <Text style={[styles.text, styles.bold]}>TRANSPORTADORA: {transportadora}</Text>}
+          <Text style={[styles.text, styles.bold]}>FORMA DE PAGAMENTO: {pagamento}</Text>
         </View>
-        <View style={styles.section}>
-          <Text style={styles.header}>Pedido</Text>
+        <View>
+          <Text>Pedido</Text>
           <View style={styles.itemList}>
             {pedidos.map((pedido, index) => (
-              <Text key={index} style={styles.item}>{pedido}</Text>
+              <Text key={index} style={[styles.item, styles.bold]}>{pedido}</Text>
             ))}
           </View>
         </View>
