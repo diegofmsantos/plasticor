@@ -92,16 +92,16 @@ export const FormClient = () => {
         // Gerar o PDF
         const blob = await pdf(<PdfDocument />).toBlob();
 
-    // Salvar o PDF localmente
-    saveAs(blob, 'pedido.pdf');
+        // Salvar o PDF localmente
+        saveAs(blob, 'pedido.pdf');
 
-    // Abra o WhatsApp com a mensagem formatada
-    setTimeout(() => {
-        const message = generateMessage();
-        window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
-      }, 500);
+        // Abra o WhatsApp com a mensagem formatada
+        /*setTimeout(() => {
+            const message = generateMessage();
+            window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
+        }, 500);*/
 
-      window.location.reload();
+        window.location.reload();
     }
 
     return (
