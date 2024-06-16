@@ -1,15 +1,4 @@
-import { Font, StyleSheet } from '@react-pdf/renderer';
-import RobotoBold from '../../public/fonts/Roboto-Bold.ttf'
-
-Font.register({
-  family: 'RobotoBold',
-  fonts: [
-    {
-      src: RobotoBold,
-      fontWeight: 'bold'
-    }
-  ],
-});
+import { StyleSheet } from '@react-pdf/renderer'
 
 export const styles = StyleSheet.create({
   page: { padding: 30 },
@@ -63,7 +52,5 @@ export const styles = StyleSheet.create({
     borderTop: 1,
     paddingBottom: 10,
     paddingTop: 10,
-  },
-
-  bold: { fontFamily: 'RobotoBold', fontWeight: 'bold' }, // Adicionando a classe bold para o estilo de texto em negrito
-});
+  }
+})

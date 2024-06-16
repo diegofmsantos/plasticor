@@ -67,7 +67,7 @@ const PdfDocument = () => {
           <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>FORMA DE PAGAMENTO:</Text> {pagamento}</Text>
         </View>
         <View>
-          <Text><Text style={styles.bold}>Pedido</Text></Text>
+          <Text><Text>Pedido</Text></Text>
           <View style={styles.itemList}>
             {pedidos.map((pedido, index) => (
               <Text key={index} style={styles.text}>{pedido}</Text>
@@ -75,10 +75,10 @@ const PdfDocument = () => {
           </View>
         </View>
         <View style={styles.total}>
-          <Text><Text style={styles.bold}>CAIXAS:</Text> {totalItems}</Text>
-          <Text><Text style={styles.bold}>SUBTOTAL:</Text> R$ {subtotalFormatado}</Text>
-          <Text><Text style={styles.bold}>DESCONTO:</Text> {desconto}% (-R$ {descontoReais})</Text>
-          <Text><Text style={styles.bold}>TOTAL:</Text> R$ {totalFinalFormatado}</Text>
+          <Text><Text>CAIXAS:</Text> {totalItems}</Text>
+          <Text><Text>SUBTOTAL:</Text> R$ {subtotalFormatado}</Text>
+          <Text><Text>DESCONTO:</Text> {desconto}% (-R$ {descontoReais})</Text>
+          <Text><Text>TOTAL:</Text> R$ {totalFinalFormatado}</Text>
         </View>
       </Page>
     </Document>
