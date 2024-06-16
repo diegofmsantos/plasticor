@@ -5,7 +5,6 @@ import { useCartStore } from '@/stores/cart-store';
 import { styles } from '@/lib/styles';
 
 const PdfDocument = () => {
-
   const [checkoutState, setCheckoutState] = useState(useCheckoutStore.getState());
   const [cartState, setCartState] = useState(useCartStore.getState());
 
@@ -19,9 +18,7 @@ const PdfDocument = () => {
     };
   }, []);
 
-  const {
-    cliente, cnpj, cep, rua, numero, complemento, bairro, cidade, email, telefone, frete, transportadora, pagamento
-  } = checkoutState;
+  const { cliente, cnpj, cep, rua, numero, complemento, bairro, cidade, email, telefone, frete, transportadora, pagamento } = checkoutState;
   const { cart, subtotal, desconto, totalFinal, totalItems } = cartState;
 
   let pedidos = [];
@@ -32,9 +29,8 @@ const PdfDocument = () => {
   const descontoReais = (subtotal * (desconto / 100)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const totalFinalFormatado = totalFinal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-  // Obtém a data atual
   const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString('pt-BR', {
+  const date = currentDate.toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
@@ -46,43 +42,43 @@ const PdfDocument = () => {
         <View style={styles.header}>
           <Image src="/assets/logo.png" style={styles.logo} />
           <View style={styles.companyInfo}>
-            <Text style={styles.bold}>PLASTICOR BRINDES INDÚSTRIA E COMÉRCIO LTDA</Text>
-            <Text style={styles.bold}>RUA ARTUR AZEVEDO, 79</Text>
-            <Text style={styles.bold}>ENCRUZILHADA - CEP 52021190 - RECIFE-PE</Text>
+            <Text>PLASTICOR BRINDES INDÚSTRIA E COMÉRCIO LTDA</Text>
+            <Text>RUA ARTUR AZEVEDO, 79</Text>
+            <Text>ENCRUZILHADA - CEP 52021190 - RECIFE-PE</Text>
             <Text>Fone: (81)3241-2410 / 3241-6276 - Fax: (81)3241-2410</Text>
-            <Text style={styles.bold}>CNPJ/CPF: 097.573.189/0001-86 - Inscr. Estadual: 011226-45</Text>
+            <Text>CNPJ/CPF: 097.573.189/0001-86 - Inscr. Estadual: 011226-45</Text>
           </View>
           <View>
-            <Text style={styles.emissao}>Data de Emissão: {formattedDate}</Text>
+            <Text style={{ fontSize: 10 }}>Data de emissão:{date}</Text>
           </View>
         </View>
         <View style={styles.section}>
-          <Text style={[styles.text, styles.bold]}>CLIENTE: {cliente}</Text>
-          <Text style={[styles.text, styles.bold]}>CNPJ/CPF: {cnpj}</Text>
-          <Text style={[styles.text, styles.bold]}>CEP: {cep}</Text>
-          <Text style={[styles.text, styles.bold]}>RUA: {rua}, Nº: {numero}</Text>
-          <Text style={[styles.text, styles.bold]}>COMPLEMENTO: {complemento}</Text>
-          <Text style={[styles.text, styles.bold]}>BAIRRO: {bairro}</Text>
-          <Text style={[styles.text, styles.bold]}>CIDADE: {cidade}</Text>
-          <Text style={[styles.text, styles.bold]}>E-MAIL: {email}</Text>
-          <Text style={[styles.text, styles.bold]}>TELEFONE: {telefone}</Text>
-          <Text style={[styles.text, styles.bold]}>FRETE: {frete}</Text>
-          {frete === 'FOB' && <Text style={[styles.text, styles.bold]}>TRANSPORTADORA: {transportadora}</Text>}
-          <Text style={[styles.text, styles.bold]}>FORMA DE PAGAMENTO: {pagamento}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>CLIENTE:</Text> {cliente}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>CNPJ/CPF:</Text> {cnpj}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>CEP:</Text> {cep}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>RUA:</Text> {rua}, Nº: {numero}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>COMPLEMENTO:</Text> {complemento}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>BAIRRO:</Text> {bairro}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>CIDADE:</Text> {cidade}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>E-MAIL:</Text> {email}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>TELEFONE:</Text> {telefone}</Text>
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>FRETE:</Text> {frete}</Text>
+          {frete === 'FOB' && <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>TRANSPORTADORA:</Text> {transportadora}</Text>}
+          <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>FORMA DE PAGAMENTO:</Text> {pagamento}</Text>
         </View>
         <View>
-          <Text>Pedido</Text>
+          <Text><Text style={styles.bold}>Pedido</Text></Text>
           <View style={styles.itemList}>
             {pedidos.map((pedido, index) => (
-              <Text key={index} style={[styles.item, styles.bold]}>{pedido}</Text>
+              <Text key={index} style={styles.text}>{pedido}</Text>
             ))}
           </View>
         </View>
         <View style={styles.total}>
-          <Text>CAIXAS: {totalItems}</Text>
-          <Text>SUBTOTAL: R$ {subtotalFormatado}</Text>
-          <Text>DESCONTO: {desconto}% (-R$ {descontoReais})</Text>
-          <Text>TOTAL: R$ {totalFinalFormatado}</Text>
+          <Text><Text style={styles.bold}>CAIXAS:</Text> {totalItems}</Text>
+          <Text><Text style={styles.bold}>SUBTOTAL:</Text> R$ {subtotalFormatado}</Text>
+          <Text><Text style={styles.bold}>DESCONTO:</Text> {desconto}% (-R$ {descontoReais})</Text>
+          <Text><Text style={styles.bold}>TOTAL:</Text> R$ {totalFinalFormatado}</Text>
         </View>
       </Page>
     </Document>

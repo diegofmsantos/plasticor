@@ -46,10 +46,10 @@ export const NoteListRdzd: Notebook[] = [
         codigos: [4263, 4253, 4243],
         modelo: 'reduzido',
         genero: 'feminino',
-        linha: 'UNICORN-WORLD - Red',
+        linha: 'UNICORN WORLD - Red',
         materias: ['10 matérias', '15 matérias', '20 matérias'],
         valores: [452.70, 508.56, 470.16],
-        url: ['UNICORN-WORLD-1.png', 'UNICORN-WORLD-2.png', 'UNICORN-WORLD-3.png', 'UNICORN-WORLD-4.png', 'UNICORN-WORLD-5.png']
+        url: ['UNICORN WORLD-1.png', 'UNICORN WORLD-2.png', 'UNICORN WORLD-3.png', 'UNICORN WORLD-4.png', 'UNICORN WORLD-5.png']
     },
     {
         id: 6,
@@ -166,20 +166,20 @@ export const NoteListRdzd: Notebook[] = [
         codigos: [4267, 4257, 4247],
         modelo: 'reduzido',
         genero: 'masculino',
-        linha: 'EPIC-GAMES - Red',
+        linha: 'EPIC GAMES - Red',
         materias: ['10 matérias', '15 matérias', '20 matérias'],
         valores: [434.40, 482.88, 449.82],
-        url: ['EPIC-GAMES-1.png', 'EPIC-GAMES-2.png', 'EPIC-GAMES-3.png', 'EPIC-GAMES-4.png', 'EPIC-GAMES-5.png']
+        url: ['EPIC GAMES-1.png', 'EPIC GAMES-2.png', 'EPIC GAMES-3.png', 'EPIC GAMES-4.png', 'EPIC GAMES-5.png']
     },
     {
         id: 18,
         codigos: [4268, 4258, 4248],
         modelo: 'reduzido',
         genero: 'masculino',
-        linha: 'SPORT-MIX - Red',
+        linha: 'SPORT MIX - Red',
         materias: ['10 matérias', '15 matérias', '20 matérias'],
         valores: [434.40, 482.88, 449.82],
-        url: ['SPORT-MIX-1.png', 'SPORT-MIX-2.png', 'SPORT-MIX-3.png', 'SPORT-MIX-4.png', 'SPORT-MIX-5.png']
+        url: ['SPORT MIX-1.png', 'SPORT MIX-2.png', 'SPORT MIX-3.png', 'SPORT MIX-4.png', 'SPORT MIX-5.png']
     },
     {
         id: 19,
@@ -236,10 +236,10 @@ export const NoteListRdzd: Notebook[] = [
         codigos: [4333, 4332, 4331],
         modelo: 'reduzido',
         genero: 'masculino',
-        linha: 'FIGHT-CLUB - Red',
+        linha: 'FIGHT CLUB - Red',
         materias: ['10 matérias', '15 matérias', '20 matérias'],
         valores: [434.40, 482.88, 449.82],
-        url: ['FIGHT-CLUB-1.png', 'FIGHT-CLUB-2.png', 'FIGHT-CLUB-3.png', 'FIGHT-CLUB-4.png', 'FIGHT-CLUB-5.png']
+        url: ['FIGHT CLUB-1.png', 'FIGHT CLUB-2.png', 'FIGHT CLUB-3.png', 'FIGHT CLUB-4.png', 'FIGHT CLUB-5.png']
     },
     {
         id: 25,

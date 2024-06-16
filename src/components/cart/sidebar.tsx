@@ -54,7 +54,7 @@ export const CartSidebar = () => {
                     <div className="flex flex-col justify-center items-center text-center text-xs font-bold">
                         <p className="mb-2 text-lg">DESCONTO (%)</p>
                         <input
-                            value={desconto}
+                            value={desconto == 0 ? '' : desconto}
                             onChange={e => setDesconto(+e.target.value)}
                             type="number"
                             className="w-40 pl-16 h-10 text-xl ] outline-none border border-gray-300 text-gray-500" />

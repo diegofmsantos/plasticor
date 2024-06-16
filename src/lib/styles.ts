@@ -1,9 +1,19 @@
-import { StyleSheet } from '@react-pdf/renderer';
+import { Font, StyleSheet } from '@react-pdf/renderer';
+import RobotoBold from '../../public/fonts/Roboto-Bold.ttf'
+
+Font.register({
+  family: 'RobotoBold',
+  fonts: [
+    {
+      src: RobotoBold,
+      fontWeight: 'bold'
+    }
+  ],
+});
 
 export const styles = StyleSheet.create({
-  page: {
-    padding: 30,
-  },
+  page: { padding: 30 },
+
   header: {
     display: 'flex',
     flexDirection: 'row',
@@ -11,18 +21,17 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginBottom: 10,
   },
-  logo: {
-    width: 150,
-    height: 70,
-  },
+
+  logo: { width: 150, height: 70 },
+
   companyInfo: {
     fontSize: 8,
     textAlign: 'right',
     display: 'flex',
     flexDirection: 'column',
     gap: 5,
-    fontWeight: 'bold'
   },
+
   section: {
     paddingBottom: 10,
     paddingTop: 10,
@@ -31,29 +40,21 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     gap: 10,
     borderTop: 1,
-    borderBottom: 1
+    borderBottom: 1,
   },
-  text: {
-    fontSize: 10,
-    fontStyle: 'bold',
-    fontWeight: 'bold'
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
+
+  text: { fontSize: 10 },
+
   itemList: {
     fontSize: 10,
     display: 'flex',
     flexDirection: 'column',
     gap: 5,
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
   },
-  item: {
-    fontSize: 10
-  },
+
   total: {
-    fontWeight: 'extrabold',
     fontSize: 10,
     display: 'flex',
     flexDirection: 'column',
@@ -63,7 +64,6 @@ export const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 10,
   },
-  emissao: {
-    fontSize: 8
-  }
+
+  bold: { fontFamily: 'RobotoBold', fontWeight: 'bold' }, // Adicionando a classe bold para o estilo de texto em negrito
 });

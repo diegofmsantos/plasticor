@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useCheckoutStore } from '@/stores/checkout-store';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { generateMessage } from '@/lib/generate-message';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { pdf } from '@react-pdf/renderer'; // Importe pdf corretamente
-import { saveAs } from 'file-saver'; // Importe saveAs corretamente
-import PdfDocument from '@/components/pdfDocument'; // Certifique-se de que o caminho está correto
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useCheckoutStore } from '@/stores/checkout-store'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { generateMessage } from '@/lib/generate-message'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { pdf } from '@react-pdf/renderer'
+import { saveAs } from 'file-saver'
+import PdfDocument from '@/components/pdfDocument'
 
 
 const formSchema = z.object({
@@ -25,17 +25,17 @@ const formSchema = z.object({
     }).min(8, "Cep deve ter no mínimo 8 caracteres."),
     rua: z.string({
         required_error: "Preencha a rua."
-    }).min(5, "Rua deve ter no mínimo 5 caracteres."),
+    }).min(3, "Rua deve ter no mínimo 3 caracteres."),
     numero: z.string({
         required_error: "Preencha o número."
     }).min(1, "Número deve ter no mínimo 1 caracter."),
     complemento: z.string().optional(),
     bairro: z.string({
         required_error: "Preencha o bairro."
-    }).min(5, "Bairro deve ter no mínimo 5 caracteres."),
+    }).min(3, "Bairro deve ter no mínimo 3 caracteres."),
     cidade: z.string({
         required_error: "Preencha a cidade."
-    }).min(5, "Cidade deve ter no mínimo 8 caracteres."),
+    }).min(3, "Cidade deve ter no mínimo 3 caracteres."),
     email: z.string({
         required_error: "Preencha o email"
     }).email({ message: "E-mail inválido." }),
@@ -75,6 +75,7 @@ export const FormClient = () => {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log("formumário enviado 1")
         setCliente(values.cliente)
         setCnpj(values.cnpj)
         setCep(values.cep)
@@ -89,19 +90,27 @@ export const FormClient = () => {
         setTransportadora(values.transportadora)
         setPagamento(values.pagamento)
 
+        console.log("formumário enviado 2")
+
         // Gerar o PDF
-        const blob = await pdf(<PdfDocument />).toBlob();
+        const blob = await pdf(<PdfDocument />).toBlob()
+
+        console.log("formumário enviado 3")
 
         // Salvar o PDF localmente
-        saveAs(blob, 'pedido.pdf');
+        saveAs(blob, 'pedido.pdf')
+
+        console.log("formumário enviado 4")
 
         // Abra o WhatsApp com a mensagem formatada
-        /*setTimeout(() => {
-            const message = generateMessage();
-            window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank');
-        }, 500);*/
+        setTimeout(() => {
+            const message = generateMessage()
+            window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank')
+        }, 500)
+        console.log("formumário enviado 5")
 
-        window.location.reload();
+        window.location.reload()
+        console.log("formumário enviado 6")
     }
 
     return (
@@ -222,5 +231,5 @@ export const FormClient = () => {
                 </Button>
             </form>
         </Form>
-    );
-};
+    )
+}

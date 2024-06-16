@@ -26,8 +26,8 @@ export const Modal = ({ item, image }: Props) => {
 
     const calculateTotal = () => {
         if (selectedMaterialIndex !== null && quantity > 0) {
-            const valorUnitario = item.valores[selectedMaterialIndex];
-            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            const valorUnitario = item.valores[selectedMaterialIndex]
+            return (quantity * valorUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         }
         return '0,00'
     }
