@@ -1,7 +1,7 @@
 export type Notebook = {
     id: number
     codigos: number[]
-    modelo?: 'normal' | 'reduzido'
+    modelo?: string
     genero?: 'masculino' | 'feminino' 
     linha: string
     materias: string[]

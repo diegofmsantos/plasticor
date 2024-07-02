@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { getNoteFem, getNoteInfant, getNoteMasc, getNoteRdzd } from "@/services/product"
+import { getNoteFem, getNoteInfant, getNoteMasc, getNoteBasic } from "@/services/product"
 import { Notebook } from "@/types/Notebook"
 import { ProductItem } from "@/components/produtcts/item"
 
@@ -11,13 +11,13 @@ type Tab = {
 
 export const NotebookTabs = async () => {
 
-    const [noteMasc, noteFem, noteInfant, noteRdzd] =
-        await Promise.all([getNoteMasc(), getNoteFem(), getNoteInfant(), getNoteRdzd() ])
+    const [noteMasc, noteFem, noteInfant, noteBasic] =
+        await Promise.all([getNoteMasc(), getNoteFem(), getNoteInfant(), getNoteBasic() ])
 
     const tabs: Tab[] = [
         { title: 'MASCULINO', value: 'masculino', products: noteMasc.map(item => item) },
         { title: 'FEMININO', value: 'feminino', products: noteFem.map(item => item) },
-        { title: 'REDUZIDO', value: 'reduzido', products: noteRdzd.map(item => item)},
+        { title: 'BASIC', value: 'basic', products: noteBasic.map(item => item)},
         { title: 'INFANTIL', value: 'infantil', products: noteInfant.map(item => item) }
     ]
 

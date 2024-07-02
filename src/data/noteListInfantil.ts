@@ -3,91 +3,91 @@ import { Notebook } from "@/types/Notebook";
 export const NoteListInfantil: Notebook[] = [
     {
         id: 1,
-        codigos: [4273, 4269, 4270, 4271, 4272],
+        codigos: [4504, 4505, 4506, 4507, 4508],
         linha: 'PRINCESS',
-        materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
-        valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['PRINCESS-1.png', 'PRINCESS-2.png', 'PRINCESS-3.png', 'PRINCESS-4.png', 'PRINCESS-5.png']
+        materias: ['Espiralzinho', 'Brochurinha', 'Brochurão', 'Cartografia', 'Agenda'],
+        valores: [643.20, 735.36, 734.40, 648.00, 658.80],
+        url: ['princess-1.jpg', 'princess-2.jpg', 'princess-3.jpg', 'princess-4.jpg', 'princess-5.jpg']
     },
     {
         id: 2,
-        codigos: [4284, 4285, 4286, 4287, 4288],
-        linha: 'HEROES',
-        materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
-        valores: [682.20, 615.60, 557.28, 660.96, 631.98],
-        url: ['HEROES-1.png', 'HEROES-2.png', 'HEROES-3.png', 'HEROES-4.png', 'HEROES-5.png']
+        codigos: [4509, 4510, 4511, 4512, 4513],
+        linha: 'UNICORN WORLD - INFANTIL',
+        materias: ['Espiralzinho', 'Brochurinha', 'Brochurão', 'Cartografia', 'Agenda'],
+        valores: [643.20, 735.36, 734.40, 648.00, 658.80],
+        url: ['unicorn world-1.jpg', 'unicorn world-2.jpg', 'unicorn world-3.jpg', 'unicorn world-4.jpg', 'unicorn world-5.jpg']
     },
     {
         id: 3,
-        codigos: [4274, 4275, 4276, 4277, 4278],
-        linha: 'UNICORN WORLD',
-        materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
-        valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['UNICORN WORLD-1.png', 'UNICORN WORLD-2.png', 'UNICORN WORLD-3.png', 'UNICORN WORLD-4.png', 'UNICORN WORLD-5.png']
+        codigos: [4514, 4515, 4516, 4517, 4518],
+        linha: 'KIDS',
+        materias: ['Espiralzinho', 'Brochurinha', 'Brochurão', 'Cartografia', 'Agenda'],
+        valores: [643.20, 735.36, 734.40, 648.00, 658.80],
+        url: ['kids-1.jpg', 'kids-2.jpg', 'kids-3.jpg', 'kids-4.jpg', 'kids-5.jpg']
     },
     {
         id: 4,
-        codigos: [4279, 4280, 4281, 4282, 4283],
-        linha: 'KIDS',
-        materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
-        valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['KIDS-1.png', 'KIDS-2.png', 'KIDS-3.png', 'KIDS-4.png', 'KIDS-5.png']
+        codigos: [4519, 4520, 4521, 4522, 4523],
+        linha: 'HEROES - INFANTIL',
+        materias: ['Espiralzinho', 'Brochurinha', 'Brochurão', 'Cartografia', 'Agenda'],
+        valores: [643.20, 735.36, 734.40, 648.00, 658.80],
+        url: ['heroes-1.jpg', 'heroes-2.jpg', 'heroes-3.jpg', 'heroes-4.jpg', 'heroes-5.jpg']
     },
     {
         id: 5,
-        codigos: [4289, 4290, 4291, 4292, 4293],
+        codigos: [4524, 4525, 4526, 4527, 4528],
         linha: 'PLAY',
-        materias: ['Brochurinha', 'Brochurão', 'Espiralzinho', 'Cartografia', 'Agenda'],
-        valores: [682.20, 648.00, 586.56, 695.76, 665.28],
-        url: ['PLAY-1.png', 'PLAY-2.png', 'PLAY-3.png', 'PLAY-4.png', 'PLAY-5.png']
+        materias: ['Espiralzinho', 'Brochurinha', 'Brochurão', 'Cartografia', 'Agenda'],
+        valores: [643.20, 735.36, 734.40, 648.00, 658.80],
+        url: ['play-1.jpg', 'play-2.jpg', 'play-3.jpg', 'play-4.jpg', 'play-5.jpg']
     },
     {
         id: 6,
-        codigos: [4294],
-        linha: 'COLOUR - 180 folhas',
+        codigos: [4529],
+        linha: 'LOVE - 180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['COLOUR-1.png', 'COLOUR-2.png', 'COLOUR-3.png', 'COLOUR-4.png']
+        valores: [630.00],
+        url: ['love-1.jpg', 'love-2.jpg', 'love-3.jpg', 'love-4.jpg']
     },
     {
         id: 7,
-        codigos: [4295],
-        linha: 'PETS - 180 folhas',
-        materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['PETS-1.png', 'PETS-2.png', 'PETS-3.png', 'PETS-4.png']
+        codigos: [4530],
+        linha: 'FLYS - 180 FOLHAS',
+        materias: ['1/4 c/ 180 FOLHAS'],
+        valores: [630.00],
+        url: ['flys-1.jpg', 'flys-2.jpg', 'flys-3.jpg', 'flys-4.jpg']
     },
     {
         id: 8,
-        codigos: [4296],
-        linha: 'CAPRICHE - 180 folhas',
+        codigos: [4531],
+        linha: 'CAPRICHE - 180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['CAPRICHE-1.png', 'CAPRICHE-2.png', 'CAPRICHE-3.png', 'CAPRICHE-4.png']
+        valores: [630.00],
+        url: ['capriche-1.jpg', 'capriche-2.jpg', 'capriche-3.jpg', 'capriche-4.jpg']
     },
     {
         id: 9,
-        codigos: [4297],
-        linha: 'SK8 - 180 folhas',
+        codigos: [4532],
+        linha: 'MOTORCYCLES-180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['SK8-1.png', 'SK8-2.png', 'SK8-3.png', 'SK8-4.png']
+        valores: [630.00],
+        url: ['motorcycles-1.jpg', 'motorcycles-2.jpg', 'motorcycles-3.jpg', 'motorcycles-4.jpg']
     },
     {
         id: 10,
-        codigos: [4298],
-        linha: 'SPORT MIX - 180 folhas',
+        codigos: [4533],
+        linha: 'SPORT MIX - 180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['SPORT MIX-1.png', 'SPORT MIX-2.png', 'SPORT MIX-3.png', 'SPORT MIX-4.png']
+        valores: [630.00],
+        url: ['sport mix-1.jpg', 'sport mix-2.jpg', 'sport mix-3.jpg', 'sport mix-4.jpg']
     },
     {
         id: 11,
-        codigos: [4299],
-        linha: 'VELOZES E TUNADOS - 180 folhas',
+        codigos: [4534],
+        linha: 'VELOZES E TUNADOS - 180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
-        valores: [557.40],
-        url: ['VELOZES E TUNADOS-1.png', 'VELOZES E TUNADOS-2.png', 'VELOZES E TUNADOS-3.png', 'VELOZES E TUNADOS-4.png']
+        valores: [630.00],
+        url: ['velozes e tunados-1.jpg', 'velozes e tunados-2.jpg', 'velozes e tunados-3.jpg', 'velozes e tunados-4.jpg']
     },
 
 ]

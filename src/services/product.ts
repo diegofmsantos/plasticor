@@ -2,7 +2,7 @@ import { Notebook } from "@/types/Notebook";
 import { NoteListMasc } from "@/data/noteListMasc"
 import { NoteListFem } from "@/data/noteListFem"
 import { NoteListInfantil } from "@/data/noteListInfantil"
-import { NoteListRdzd } from "@/data/noteListRdzd";
+import { NoteListBasic } from "@/data/noteListBasic";
 
 export const getNoteMasc = async (): Promise<Notebook[]> => {
     return new Promise((resolve, reject) => {
@@ -21,10 +21,10 @@ export const getNoteFem = async (): Promise<Notebook[]> => {
     })
 }
 
-export const getNoteRdzd = async (): Promise<Notebook[]> => {
+export const getNoteBasic = async (): Promise<Notebook[]> => {
     return new Promise((resolve, reject) => {
         return setTimeout(() => {
-            resolve(NoteListRdzd)
+            resolve(NoteListBasic)
         }, 1000)
     })
 }
