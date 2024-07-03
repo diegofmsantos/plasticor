@@ -44,18 +44,18 @@ export const NoteListInfantil: Notebook[] = [
     {
         id: 6,
         codigos: [4529],
-        linha: 'LOVE - 180 FOLHAS',
+        linha: 'FLYS - 180 FOLHAS',
         materias: ['1/4 c/ 180 folhas'],
         valores: [630.00],
-        url: ['love-1.jpg', 'love-2.jpg', 'love-3.jpg', 'love-4.jpg']
+        url: ['flys-1.jpg', 'flys-2.jpg', 'flys-3.jpg', 'flys-4.jpg']
     },
     {
         id: 7,
         codigos: [4530],
-        linha: 'FLYS - 180 FOLHAS',
+        linha: 'LOVE - 180 FOLHAS',
         materias: ['1/4 c/ 180 FOLHAS'],
         valores: [630.00],
-        url: ['flys-1.jpg', 'flys-2.jpg', 'flys-3.jpg', 'flys-4.jpg']
+        url: ['love-1.jpg', 'love-2.jpg', 'love-3.jpg', 'love-4.jpg']
     },
     {
         id: 8,

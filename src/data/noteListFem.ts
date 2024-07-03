@@ -11,7 +11,7 @@ export const NoteListFem: Notebook[] = [
     },
     {
         id: 2,
-        codigos: [4361, 4361, 4362, 4363, 4364],
+        codigos: [4365, 4361, 4362, 4363, 4364],
         linha: 'RAINBOW',
         materias: ['1 matéria', '10 matérias', '12 matérias', '15 matérias', '20 matérias'],
         valores: [545.76, 648.00, 586.56, 695.76, 665.28],

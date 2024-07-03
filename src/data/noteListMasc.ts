@@ -107,7 +107,7 @@ export const NoteListMasc: Notebook[] = [
     },
     {
         id: 14,
-        codigos: [],
+        codigos: [4535, 4536],
         linha: 'GOL LEÃO',
         materias: ['15 matérias', '20 matérias'],
         valores: [660.96, 631.98],
