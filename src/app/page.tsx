@@ -1,10 +1,11 @@
+import { Suspense } from 'react';
 import Login from './login'
 
 const Page = () => {
   return (
-    <div>
+    <Suspense fallback={<div>Carregando...</div>}>
       <Login />
-    </div>
+    </Suspense>
   )
 }
 
