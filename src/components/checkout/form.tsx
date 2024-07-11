@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod';
+import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useCheckoutStore } from '@/stores/checkout-store'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -37,7 +37,7 @@ const formSchema = z.object({
         required_error: "Preencha a cidade."
     }).min(3, "Cidade deve ter no mínimo 3 caracteres."),
     email: z.string({
-        required_error: "Preencha o email"
+        required_error: "Preencha o e-mail"
     }).email({ message: "E-mail inválido." }),
     telefone: z.string({
         required_error: "Preencha o telefone."
@@ -75,7 +75,6 @@ export const FormClient = () => {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log("formumário enviado 1")
         setCliente(values.cliente)
         setCnpj(values.cnpj)
         setCep(values.cep)
@@ -90,27 +89,22 @@ export const FormClient = () => {
         setTransportadora(values.transportadora)
         setPagamento(values.pagamento)
 
-        console.log("formumário enviado 2")
 
         // Gerar o PDF
         const blob = await pdf(<PdfDocument />).toBlob()
 
-        console.log("formumário enviado 3")
 
         // Salvar o PDF localmente
         saveAs(blob, 'pedido.pdf')
 
-        console.log("formumário enviado 4")
 
         // Abra o WhatsApp com a mensagem formatada
         setTimeout(() => {
             const message = generateMessage()
             window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATS}?text=${encodeURI(message)}`, '_blank')
         }, 500)
-        console.log("formumário enviado 5")
 
         window.location.reload()
-        console.log("formumário enviado 6")
     }
 
     return (
