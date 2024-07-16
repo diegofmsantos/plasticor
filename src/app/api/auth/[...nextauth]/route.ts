@@ -36,6 +36,15 @@ const handler = NextAuth({
                         image: '/assets/haim.jpeg'
                     }
                 }
+
+                if(credentials.email === "plasticorvendas@yahoo.com.br" && credentials.senha === "12345") {
+                    return {
+                        id: '3',
+                        name: 'Plasticor',
+                        email: 'plasticorvendas@yahoo.com.br',
+                        image: '/assets/favicon.jpg'
+                    }
+                }
                 
                 return null
             }
