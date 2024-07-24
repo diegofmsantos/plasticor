@@ -1,4 +1,3 @@
-/*
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { NotebookSkeleton } from "@/components/produtcts/skeleton"
@@ -22,4 +21,3 @@ const Home = () => {
 }
 
 export default Home;
-*/

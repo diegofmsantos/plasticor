@@ -1,8 +1,5 @@
 import Image from "next/image"
 import { CartSidebar } from "./cart/sidebar"
-import { getServerSession } from 'next-auth'
-import LogOut from "./logout-button"
-import { redirect } from "next/navigation"
 
 export const Header = () => {
 
