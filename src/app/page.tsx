@@ -1,12 +1,23 @@
-import { Suspense } from 'react';
-import Login from './login'
+import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
+import { NotebookSkeleton } from "@/components/produtcts/skeleton"
+import { NotebookTabs } from "@/components/produtcts/tabs"
+import { Suspense } from "react"
 
-const Page = () => {
+
+const Home = () => {
+
   return (
-    <Suspense fallback={<div>Carregando...</div>}>
-      <Login />
-    </Suspense>
+    <div className="w-full overflow-x-hidden">
+      <Header />
+      <div className="mx-3 mt-28">
+        <Suspense fallback={<NotebookSkeleton />}>
+          <NotebookTabs />
+        </Suspense>
+      </div>
+      <Footer />
+    </div>
   )
 }
 
-export default Page;
+export default Home;
