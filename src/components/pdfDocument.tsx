@@ -32,7 +32,7 @@ const PdfDocument = () => {
         <Text style={styles.pedidoItem1}>{item.product.codigos[item.selectedMaterialIndex]}</Text>
         <Text style={styles.pedidoItem2}>{item.product.linha} - ({item.product.materias[item.selectedMaterialIndex]})</Text>
         <Text style={styles.pedidoItem3}>{item.quantity}</Text>
-        <Text style={styles.pedidoItem4}>R${item.price}</Text>
+        <Text style={styles.pedidoItem4}>R${item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
         <Text style={styles.pedidoItem5}>R${(item.quantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
       </View>
     );

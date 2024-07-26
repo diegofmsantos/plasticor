@@ -14,26 +14,13 @@ export const ProductItem = ({ item }: Props) => {
                     <div className="text-center text-lg font-bold text-bg-[#002372]">{item.linha}
                     </div>
                     <CarouselContent className="w-[300px]">
-                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-52">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[0]}`} width={170} height={170} alt="Image" className="w-full h-full" priority />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-52">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[1]}`} width={170} height={170} alt="Image" className="w-full h-full" />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
-                            <div className="w-52">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[2]}`} width={170} height={170} alt="Image" className="w-full h-full" />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-52 md:h-64">
-                            <div className="w-52">
-                                <Image src={`/assets/linhas/${item.linha}/${item.url[3]}`} width={170} height={170} alt="Image" className="w-full h-full" />
-                            </div>
-                        </CarouselItem>
+                        {item.url.map((url, index) => (
+                            <CarouselItem key={index} className="w-52 h-60 p-0 flex justify-center items-center sm:w-48 sm:h-60 md:w-44 md:h-64">
+                                <div className="w-52">
+                                    <Image src={`/assets/linhas/${item.linha}/${url}`} width={170} height={170} alt="Image" className="w-full h-full" />
+                                </div>
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                 </Carousel>
                 <Modal item={item} image={item.url.map(url => `/assets/linhas/${item.linha}/${url}`)} />
