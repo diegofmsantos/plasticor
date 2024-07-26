@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    gap: '20px',
+    gap: '50px',
     fontSize: 9,
     marginRight: '50px'
   },

@@ -70,7 +70,8 @@ const PdfDocument = () => {
           <Text style={styles.text}><Text>NOME:</Text> {cliente}</Text>
           <Text style={styles.text}><Text>ENDEREÇO:</Text> Rua {rua}, {numero}, {complemento}, {bairro}, {cidade}, {cep}</Text>
           <Text style={styles.text}><Text>E-MAIL:</Text> {email}</Text>
-          <Text style={styles.text}><Text>TELEFONE:</Text> {telefone} CPF/CNPJ: {cnpj}</Text>
+          <Text style={styles.text}><Text>TELEFONE:</Text> {telefone}</Text>
+          <Text style={styles.text}><Text>CPF/CNPJ:</Text> {cnpj}</Text>
           <Text style={styles.text}><Text>FRETE:</Text> {frete}</Text>
           {frete === 'FOB' && <Text style={styles.text}><Text>TRANSPORTADORA:</Text> {transportadora}</Text>}
           <Text style={styles.text}><Text>FORMA DE PAGAMENTO:</Text> {pagamento}</Text>
