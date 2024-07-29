@@ -14,41 +14,19 @@ import PdfDocument from '@/components/pdfDocument'
 
 
 const formSchema = z.object({
-    cliente: z.string({
-        required_error: "Preencha o nome."
-    }).min(2, "Preencha o nome."),
-    cnpj: z.string({
-        required_error: "Preencha o CNPJ/CPF."
-    }).min(11, "CNPJ/CPF deve ter no mínimo 11 caracteres."),
-    cep: z.string({
-        required_error: "Preencha o cep."
-    }).min(8, "Cep deve ter no mínimo 8 caracteres."),
-    rua: z.string({
-        required_error: "Preencha a rua."
-    }).min(3, "Rua deve ter no mínimo 3 caracteres."),
-    numero: z.string({
-        required_error: "Preencha o número."
-    }).min(1, "Número deve ter no mínimo 1 caracter."),
+    cliente: z.string().optional(),
+    cnpj: z.string().optional(),
+    cep: z.string().optional(),
+    rua: z.string().optional(),
+    numero: z.string().optional(),
     complemento: z.string().optional(),
-    bairro: z.string({
-        required_error: "Preencha o bairro."
-    }).min(3, "Bairro deve ter no mínimo 3 caracteres."),
-    cidade: z.string({
-        required_error: "Preencha a cidade."
-    }).min(3, "Cidade deve ter no mínimo 3 caracteres."),
-    email: z.string({
-        required_error: "Preencha o e-mail"
-    }).email({ message: "E-mail inválido." }),
-    telefone: z.string({
-        required_error: "Preencha o telefone."
-    }).min(8, "Mínimo de 8 dígitos."),
+    bairro: z.string().optional(),
+    cidade: z.string().optional(),
+    email: z.string().optional(),
+    telefone: z.string().optional(),
     transportadora: z.string().optional(),
-    frete: z.string({
-        required_error: "Escolha uma das opções."
-    }),
-    pagamento: z.string({
-        required_error: "Preencha a forma de pagamento."
-    }).min(2, "Forma de pagamento deve ter no mínimo 2 caracteres."),
+    frete: z.string().optional(),
+    pagamento: z.string().optional(),
 })
 
 export const FormClient = () => {

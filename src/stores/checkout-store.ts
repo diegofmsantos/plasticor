@@ -1,19 +1,19 @@
 import { create } from "zustand"
 
 type States = {
-    cliente: string
-    cnpj: string
-    cep: string
-    rua: string
-    numero: string
+    cliente?: string
+    cnpj?: string
+    cep?: string
+    rua?: string
+    numero?: string
     complemento?: string
-    bairro: string
-    cidade: string
-    email: string
-    telefone: string
-    frete: string
+    bairro?: string
+    cidade?: string
+    email?: string
+    telefone?: string
+    frete?: string
     transportadora?: string
-    pagamento: string
+    pagamento?: string
 }
 
 type Actions = {
