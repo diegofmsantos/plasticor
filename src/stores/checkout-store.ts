@@ -14,6 +14,7 @@ type States = {
     frete?: string
     transportadora?: string
     pagamento?: string
+    obs?: string
 }
 
 type Actions = {
@@ -30,6 +31,7 @@ type Actions = {
     setFrete: (frete: States["frete"]) => void
     setTransportadora: (transportadora: States["transportadora"]) => void
     setPagamento: (pagamento: States["pagamento"]) => void
+    setObs: (pagamento: States["obs"]) => void
 }
 
 const initialState: States = {
@@ -45,7 +47,8 @@ const initialState: States = {
     telefone: '',
     frete: '',
     transportadora: '',
-    pagamento: ''
+    pagamento: '',
+    obs:''
 }
 
 export const useCheckoutStore = create<States & Actions>()(set => ({
@@ -62,5 +65,6 @@ export const useCheckoutStore = create<States & Actions>()(set => ({
     setTelefone: (telefone) => set(state => ({ ...state, telefone })),
     setFrete: (frete) => set(state => ({ ...state, frete })),
     setTransportadora: (transportadora) => set(state => ({ ...state, transportadora })),
-    setPagamento: (pagamento) => set(state => ({ ...state, pagamento }))
+    setPagamento: (pagamento) => set(state => ({ ...state, pagamento })),
+    setObs: (obs) => set(state => ({ ...state, obs }))
 }))

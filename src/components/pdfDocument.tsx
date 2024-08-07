@@ -18,7 +18,7 @@ const PdfDocument = () => {
     };
   }, []);
 
-  const { cliente, cnpj, cep, rua, numero, complemento, bairro, cidade, email, telefone, frete, transportadora, pagamento } = checkoutState;
+  const { cliente, cnpj, cep, rua, numero, complemento, bairro, cidade, email, telefone, frete, transportadora, pagamento, obs } = checkoutState;
   const { cart, subtotal, desconto, totalFinal, totalItems } = cartState;
 
   const subtotalFormatado = subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -75,6 +75,7 @@ const PdfDocument = () => {
           <Text style={styles.text}><Text>FRETE:</Text> {frete}</Text>
           {frete === 'FOB' && <Text style={styles.text}><Text>TRANSPORTADORA:</Text> {transportadora}</Text>}
           <Text style={styles.text}><Text>FORMA DE PAGAMENTO:</Text> {pagamento}</Text>
+          <Text style={styles.text}><Text>OBSERVAÇÃO:</Text> {obs}</Text>
         </View>
         <View>
           <View style={styles.tableHeader}>

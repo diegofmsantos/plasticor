@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { pdf } from '@react-pdf/renderer'
 import { saveAs } from 'file-saver'
 import PdfDocument from '@/components/pdfDocument'
+import { Textarea } from '../ui/textarea'
 
 
 const formSchema = z.object({
@@ -27,10 +28,11 @@ const formSchema = z.object({
     transportadora: z.string().optional(),
     frete: z.string().optional(),
     pagamento: z.string().optional(),
+    obs: z.string().optional()
 })
 
 export const FormClient = () => {
-    const { cliente, setCliente, cnpj, setCnpj, cep, setCep, rua, setRua, numero, setNumero, complemento, setComplemento, bairro, setBairro, cidade, setCidade, email, setEmail, telefone, setTelefone, frete, setFrete, transportadora, setTransportadora, pagamento, setPagamento } = useCheckoutStore(state => state)
+    const { cliente, setCliente, cnpj, setCnpj, cep, setCep, rua, setRua, numero, setNumero, complemento, setComplemento, bairro, setBairro, cidade, setCidade, email, setEmail, telefone, setTelefone, frete, setFrete, transportadora, setTransportadora, pagamento, setPagamento, obs, setObs } = useCheckoutStore(state => state)
     const [freteSelected, setFreteSelected] = useState(frete)
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -48,7 +50,8 @@ export const FormClient = () => {
             telefone: telefone,
             frete: frete,
             transportadora: transportadora,
-            pagamento: pagamento
+            pagamento: pagamento,
+            obs: obs
         }
     })
 
@@ -66,6 +69,7 @@ export const FormClient = () => {
         setFrete(values.frete)
         setTransportadora(values.transportadora)
         setPagamento(values.pagamento)
+        setObs(values.obs)
 
 
         // Gerar o PDF
@@ -198,6 +202,13 @@ export const FormClient = () => {
                         <FormMessage />
                     </FormItem>)}
                 />
+                <FormField control={form.control} name="obs" render={({ field }) => (
+                        <FormItem className=' mt-1'>
+                            <FormLabel className='text-md text-black'>OBSERVAÇÃO:</FormLabel>
+                            <FormControl className='text-gray-500'><Textarea {...field}/></FormControl>
+                            <FormMessage />
+                        </FormItem>)}
+                    />
                 <Button type="submit" className='w-40 m-auto my-3'>
                     Finalizar
                 </Button>
