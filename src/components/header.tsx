@@ -3,10 +3,6 @@ import { CartSidebar } from "./cart/sidebar"
 
 export const Header = () => {
 
-    //const session = await getServerSession()
-
-    //if(!session) redirect('/')
-
     return (
         <header
             className="fixed z-10 w-full flex justify-between h-32 items-center py-3 px-8 bg-[#002372]">
@@ -21,12 +17,3 @@ export const Header = () => {
     )
 }
 
-/*
-<div className="flex flex-col items-center justify-center gap-1 md:flex-row md:gap-5">
-                <p className="text-white text-sm md:text-lg">Olá, {session?.user?.name}</p>
-                {session?.user?.image && (
-                    <Image src={session.user.image} width={50} height={50} alt="User Image" className="rounded-full" />
-                )}
-                <LogOut />
-            </div>
-*/
